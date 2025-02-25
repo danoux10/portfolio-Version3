@@ -1,0 +1,804 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  border: none;
+  background: none;
+  text-decoration: none;
+}
+
+.icon-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-content svg {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  transition: all ease 0.5s;
+  position: relative;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+body a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+body #header-container {
+  border-bottom: 2px solid;
+}
+body #header-container #theme-button {
+  border: 2px solid;
+  border-radius: 50px;
+}
+body h2 {
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) {
+  body #header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.2rem;
+    position: relative;
+  }
+  body #header-container #theme-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    order: 1;
+    padding: 0.2rem;
+  }
+  body #header-container #theme-button .icon-content {
+    width: 90%;
+    height: 90%;
+  }
+  body #header-container #navbar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    border-right: 2px solid;
+    transition: width ease 0.5s;
+    overflow: hidden;
+  }
+  body #header-container #navbar-container.close {
+    width: 0;
+    border: none;
+  }
+  body #header-container #navbar-container #close-button {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0.2rem;
+    right: 0.5rem;
+  }
+  body #header-container #navbar-container #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+  }
+  body #header-container #navbar-container #navbar a {
+    padding: 0.5rem;
+  }
+  body #header-container #navbar-container #navbar a:before {
+    content: "";
+    transition: all ease 0.5s;
+    position: absolute;
+    bottom: 0.1rem;
+    width: 100%;
+    height: 0.2rem;
+  }
+  body #header-container #navbar-container #navbar a .icon-content {
+    width: 2rem;
+    height: 2rem;
+  }
+  body #header-container #navbar-container #navbar a .link-value {
+    font-weight: bold;
+  }
+  body #header-container #navbar-container #navbar a .link-value:first-letter {
+    text-transform: uppercase;
+  }
+  body #header-container #hamburger-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    border: 2px solid;
+    border-radius: 0.5rem;
+  }
+  body #header-container #hamburger-button .icon-content {
+    width: 2rem;
+    height: 2rem;
+  }
+  body main {
+    @incldue flex(column, none, none, none);
+    flex: 1;
+    overflow: auto;
+  }
+  body main::-webkit-scrollbar {
+    width: 0.2rem;
+    border-radius: 50px;
+  }
+  body main::-webkit-scrollbar-thumb {
+    width: 100%;
+    border-radius: 50px;
+  }
+  body main .title-section {
+    font-family: "Playwrite VN", serif;
+  }
+  body main #presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  body main #presentation #presentation-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 0.2rem;
+  }
+  body main #presentation #presentation-title img {
+    height: 6rem;
+    border-radius: 10px;
+  }
+  body main #presentation #presentation-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  body main #presentation #presentation-text p:first-letter {
+    text-transform: uppercase;
+  }
+  body main #presentation #presentation-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+  }
+  body main #presentation #presentation-info .information {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  body main #presentation #presentation-info .information a {
+    position: relative;
+    padding-bottom: 0.3rem;
+  }
+  body main #presentation #presentation-info .information a:before, body main #presentation #presentation-info .information a:after {
+    content: "";
+    transition: all ease 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+  }
+  body main #presentation #presentation-info .information a:after {
+    height: 100%;
+    width: 0;
+    z-index: -1;
+  }
+  body main #presentation #presentation-info .information a:before {
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+  }
+  body main #presentation #presentation-info .information a:hover:before {
+    width: 0;
+  }
+  body main #presentation #presentation-info .information a:hover:after {
+    width: 100%;
+  }
+  body main #presentation #presentation-info .information .info-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  body main #presentation #presentation-info .information .info-content .label:after {
+    content: ":";
+    margin-left: 0.2rem;
+  }
+  body main #presentation #presentation-info .information .info-content .icon-content {
+    width: 2rem;
+    height: 2rem;
+  }
+  body main #presentation #presentation-info .information#lien {
+    margin-top: 0.6rem;
+  }
+  body main #diploma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  body main #diploma #timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    height: 100%;
+  }
+  body main #diploma #timeline:before {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 80%;
+    left: 1.6rem;
+    transform: translate(-50%);
+    border: 4px solid;
+    z-index: -1;
+  }
+  body main #diploma #timeline .diploma-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  body main #diploma #timeline .diploma-card .date {
+    text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-right: 1rem;
+  }
+  body main #diploma #timeline .diploma-card .card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 0.2rem;
+  }
+  body main #diploma #timeline .diploma-card .card-content .icon-content {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: -1rem;
+    z-index: -1;
+  }
+  body main #diploma #timeline .diploma-card .card-content .diploma-name {
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  body main #diploma #timeline .diploma-card .card-content .diploma-name p {
+    text-align: center;
+  }
+  body main #diploma #timeline .diploma-card .card-content .diploma-name .diploma-title {
+    font-weight: bold;
+  }
+  body main #skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  body main #skills #language-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+  }
+  body main #skills #language-container .techno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body main #skills #language-container .techno .cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  body main #skills #language-container .techno .cards-container .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid;
+    border-radius: 5px;
+    width: 8rem;
+    height: 9rem;
+    padding: 0.5rem;
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .skill-title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .skill-icon svg {
+    width: 2.5rem;
+    height: 100%;
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .skill-icon.small-icon svg {
+    width: 3.5rem;
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .percent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-value:before {
+    content: "~ ";
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-value:after {
+    content: "%";
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-bar {
+    display: block;
+    width: 100%;
+    height: 0.6rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px solid;
+  }
+  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-bar:before {
+    transition: width ease 0.5s;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: var(--percent);
+  }
+  body main #projects nav {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  body main #projects nav button {
+    border: 1px solid;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    padding-top: 0.2rem;
+    width: 20rem;
+    height: 2rem;
+  }
+  body main #projects nav button:first-letter {
+    text-transform: uppercase;
+  }
+  body main #projects .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body main #projects .project-card .info-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+  }
+  body main #projects .project-card .info-container .image-content {
+    width: 100%;
+  }
+  body main #projects .project-card .info-container .image-content img {
+    width: 100%;
+    height: 100%;
+  }
+  body main #projects .project-card .info-container .title-and-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  body main #projects .project-card .info-container .title-and-info .title-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  body main #projects .project-card .info-container .title-and-info .title-content h3 {
+    font-weight: bold;
+  }
+  body main #projects .project-card .info-container .title-and-info .title-content h3:first-letter {
+    text-transform: uppercase;
+  }
+  body main #projects .project-card .info-container .title-and-info .tech-and-link {
+    display: flex;
+    flex-direction: row;
+  }
+  body main #projects .project-card .info-container .title-and-info .tech-and-link .tech-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    list-style: circle;
+  }
+  body main #projects .project-card .info-container .title-and-info .tech-and-link .tech-content li {
+    text-transform: uppercase;
+  }
+  body main #projects .project-card .info-container .title-and-info .tech-and-link .link-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+  }
+  body main #projects .project-card .info-container .title-and-info .tech-and-link .link-content a .icon-content {
+    width: 15%;
+  }
+  body main #projects .project-card .description-content {
+    padding: 0.5rem;
+    overflow: auto;
+    max-height: 4rem;
+  }
+  body main #projects .project-card .description-content::-webkit-scrollbar {
+    width: 0.2rem;
+    border-radius: 50px;
+  }
+  body main #projects .project-card .description-content::-webkit-scrollbar-thumb {
+    width: 100%;
+    border-radius: 50px;
+  }
+  body main #projects .project-card .description-content .description {
+    text-align: justify;
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-top: 2px solid;
+    padding: 0.5rem 0;
+  }
+  footer a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    position: relative;
+  }
+  footer a:before, footer a:after {
+    content: "";
+    transition: all ease 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+  }
+  footer a:after {
+    height: 100%;
+    width: 0;
+    z-index: -1;
+  }
+  footer a:before {
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+  }
+  footer a:hover:before {
+    width: 0;
+  }
+  footer a:hover:after {
+    width: 100%;
+  }
+  footer a .icon-content {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body #header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
+  body #header-container #theme-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    order: 2;
+    width: 6rem;
+    height: auto;
+    padding: 0.2rem;
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+  body #header-container #theme-button.active {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  body #header-container #theme-button .icon-content {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    padding: 0.2rem;
+    transition: all ease 0.5s;
+  }
+  body #header-container #navbar-container {
+    position: relative;
+    width: 80%;
+    height: auto;
+    border: none;
+  }
+  body #header-container #navbar-container.close {
+    width: 100%;
+  }
+  body #header-container #navbar-container #close-button {
+    display: none;
+  }
+  body #header-container #navbar-container #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: none;
+  }
+  body #header-container #navbar-container #navbar a {
+    position: relative;
+    position: relative;
+    z-index: 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  body #header-container #navbar-container #navbar a:before, body #header-container #navbar-container #navbar a:after {
+    content: "";
+    transition: all ease 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+  }
+  body #header-container #navbar-container #navbar a:after {
+    height: 100%;
+    width: 0;
+    z-index: -1;
+  }
+  body #header-container #navbar-container #navbar a:before {
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+  }
+  body #header-container #navbar-container #navbar a:hover:before {
+    width: 0;
+  }
+  body #header-container #navbar-container #navbar a:hover:after {
+    width: 100%;
+  }
+  body #header-container #navbar-container #navbar a.active {
+    position: relative;
+  }
+  body #header-container #navbar-container #navbar a.active:before {
+    width: 0;
+  }
+  body #header-container #navbar-container #navbar a.active:after {
+    width: 100%;
+    height: 100%;
+    border: 2px solid;
+  }
+  body #header-container #navbar-container #navbar a.active:hover:before {
+    width: 100%;
+  }
+  body #header-container #navbar-container #navbar a.active:hover:after {
+    width: 0;
+    border: none;
+  }
+  body #header-container #navbar-container #navbar a .icon-content {
+    width: 2rem;
+    height: 2rem;
+  }
+  body #header-container #navbar-container #navbar a .link-value {
+    font-weight: bold;
+  }
+  body #header-container #navbar-container #navbar a .link-value:first-letter {
+    text-transform: uppercase;
+  }
+  body #header-container #hamburger-button {
+    display: none;
+  }
+  body main #presentation p, body main #presentation a {
+    font-size: 1.5rem;
+  }
+  body main #presentation #presentation-title {
+    width: 40%;
+  }
+  body main #presentation #presentation-info {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+  }
+  body main #presentation #presentation-info .information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  body main #presentation #presentation-info .information a {
+    padding: 0.5rem;
+  }
+  body main #presentation #presentation-info .information#lien {
+    margin: 0;
+  }
+  body main #skills #language-container .techno {
+    width: 50%;
+    height: 100%;
+  }
+  body main #skills #language-container .techno h3 {
+    font-size: 2rem;
+  }
+  body main #skills #language-container .techno .cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100%;
+  }
+  body main #skills #language-container .techno .skill-card {
+    width: 5rem;
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-top: 2px solid;
+    padding: 0.5rem 0;
+  }
+  footer a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    position: relative;
+  }
+  footer a:before, footer a:after {
+    content: "";
+    transition: all ease 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+  }
+  footer a:after {
+    height: 100%;
+    width: 0;
+    z-index: -1;
+  }
+  footer a:before {
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+  }
+  footer a:hover:before {
+    width: 0;
+  }
+  footer a:hover:after {
+    width: 100%;
+  }
+  footer a .icon-content {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+body.dark {
+  background: #171717;
+  color: #e3e3e3;
+}
+body.dark a, body.dark svg {
+  color: #e3e3e3;
+  fill: #e3e3e3;
+}
+body.dark a:before, body.dark a:after {
+  background: #7296ad;
+}
+body.dark #header-container {
+  border-color: #e3e3e3;
+}
+body.dark #header-container #theme-button {
+  border-color: #7296ad;
+}
+body.dark #header-container #theme-button:hover {
+  box-shadow: 2px 2px 2px #7296ad;
+}
+body.dark #header-container #theme-button:hover .icon-content {
+  background: #7296ad;
+}
+body.dark #header-container #theme-button svg {
+  fill: #e3e3e3;
+}
+body.dark #header-container #theme-button svg#light-icon {
+  display: none;
+}
+body.dark #header-container #navbar-container #close-button {
+  fill: #e3e3e3;
+}
+body.dark #header-container #navbar-container #navbar {
+  background: #171717;
+}
+body.dark #header-container #navbar-container #navbar a:before, body.dark #header-container #navbar-container #navbar a:after {
+  background: #7296ad;
+}
+body.dark #header-container #navbar-container #navbar a.active:after {
+  border-color: #e3e3e3;
+}
+body.dark #header-container #hamburger-button {
+  border-color: #7296ad;
+}
+body.dark #header-container #hamburger-button svg {
+  fill: #7296ad;
+}
+body.dark main::-webkit-scrollbar {
+  background: #e3e3e3;
+}
+body.dark main::-webkit-scrollbar-thumb {
+  background: #7296ad;
+}
+body.dark main #diploma #timeline:before {
+  background: #7296ad;
+}
+body.dark main #diploma #timeline .date {
+  background: #171717;
+}
+body.dark main #diploma #timeline .card-content .icon-content svg {
+  fill: #7296ad;
+}
+body.dark main #diploma #timeline .card-content .diploma-name {
+  background: #7296ad;
+}
+body.dark main .percent-bar:before {
+  background: #7296ad;
+}
+body.dark main #projects nav button {
+  color: #e3e3e3;
+  border-color: #e3e3e3;
+}
+body.dark main #projects nav button.active {
+  background: rgba(114, 150, 173, 0.5);
+}
+body.dark footer {
+  border-color: #e3e3e3;
+}
+body.dark footer a {
+  padding: 0.5rem;
+}
+body.dark footer a:before, body.dark footer a:after {
+  background: #7296ad;
+}
+
+/*# sourceMappingURL=index.css.map */
