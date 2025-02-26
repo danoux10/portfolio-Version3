@@ -2,20 +2,15 @@
 include_once '../config/database.php';
 global $bdd;
 
+$select = $bdd->prepare("select * from projets where type=? ");
+$select_all = $bdd->prepare("select * from projets order by date asc");
+
 $task = null;
-$element = null;
 
 if (array_key_exists('task', $_GET)) {
   $task = $_GET['task'];
-
 }
 
-if (array_key_exists('element', $_GET)) {
-  $element = $_GET['element'];
-}
-
-$select = $bdd->prepare("select * from projets where type=? ");
-$select_all = $bdd->prepare("select * from projets order by date asc");
 
 function getData($getData)
 {
@@ -26,7 +21,8 @@ function getData($getData)
 
   $linkStart = 'http://';
   $linkEnd = '.danybarbe.ovh';
-  $datas = [];
+
+  $getData = [];
   foreach ($getData as $data) {
     $name = $data['name'];
     $date = $data['date'];
@@ -50,7 +46,7 @@ function getData($getData)
     }
 
 
-    $datas[] = [
+    $getData[] = [
       'name' => $name,
       'date' => $date,
       'capture' => $capture,
@@ -60,35 +56,17 @@ function getData($getData)
       'description' => $description];
   }
   $result = [
-    'datas' => $datas
+    'getData' => $getData
   ];
   echo json_encode($result);
 }
 
-if ($task != 'all') {
-  $select->execute([$task]);
-  getData($select);
-}
-
-if ($task === 'all') {
+if($task === 'all'){
   $select_all->execute();
   getData($select_all);
 }
 
-if ($element === 'type') {
-  $getType = $bdd->prepare('select type, count(*) from projets group by type ');
-  $getType->execute();
-  $typeName = [];
-  $count = [];
-  $id = [];
-  $i = 0;
-  foreach ($getType as $dataType) {
-    $id[] = $i++;
-    $typeName[] = $dataType['type'];
-    $count[] = $dataType['count(*)'];
-  }
-  $total = array_sum($count);
-  $resultType = ['id' => $id, 'typeName' => $typeName, 'count' => $count, 'total' => $total];
-
-  echo json_encode($resultType);
+if($task != 'all'){
+  $select->execute([$task]);
+  getData($select);
 }
