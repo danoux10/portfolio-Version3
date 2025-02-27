@@ -29,6 +29,9 @@ body {
   }
 }
 
+.hidden{
+  display: none;
+}
 
 //Mobile
 @media screen and (min-width: 320px) {
@@ -361,72 +364,6 @@ body {
             height: 2rem;
             &:first-letter{
               text-transform: uppercase;
-            }
-          }
-        }
-        //link project-card
-        .project-card {
-          //link info-container
-          @include flex(column,center,none,none);
-          .info-container {
-            @include flex(column-reverse,center,space-around,.5rem);
-            //link image-content
-            .image-content {
-              width: 100%;
-              img {
-                @include square(100%);
-                //display: none;
-              }
-            }
-            //link title-and-info
-            .title-and-info {
-              @include flex(column, center, center, none);
-              //link title-content
-              .title-content {
-                @include flex(column, center, center, .2rem);
-                h3 {
-                  font-weight: bold;
-                  &:first-letter{
-                    text-transform: uppercase;
-                  }
-                }
-              }
-              //link tech-and-link
-              .tech-and-link {
-                @include flex(row, none, none, none);
-                //link tech-content
-                .tech-content {
-                  @include flex(column, center, none, none);
-                  width: 50%;
-                  list-style: circle;
-                  li {
-                    text-transform: uppercase;
-                  }
-                }
-                //link link-content
-                .link-content {
-                  @include flex(column,none,space-around,none);
-                  width: 50%;
-                  a {
-                    .icon-content {
-                      width: 15%;
-                      svg {
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          //link description-container
-          .description-content {
-            @include scrollbar(.2rem);
-            padding: .5rem;
-            overflow: auto;
-            max-height: 4rem;
-            //link description
-            .description {
-              text-align: justify;
             }
           }
         }
