@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="styles/index.css">
 	<script src="script/navbar.js" defer></script>
 	<script src="script/projectNumber.js" defer></script>
-<!--	<script src="script/project.js" defer></script>-->
+	<script src="script/project.js" defer></script>
 </head>
 <body class="dark">
 <section id="header-container">
@@ -372,17 +372,17 @@
 	<section id="projects">
 		<h2 class="title-section">Mes Projects</h2>
 		<nav>
-			<button type="button" data-section="school" class="active">école <span id="number-school"></span></button>
-			<button type="button" data-section="portfolio">portfolio <span id="number-portfolio"></span></button>
-			<button type="button" data-section="other">autre <span id="number-other"></span></button>
-			<button type="button" data-section="game">jeux <span id="number-game"></span></button>
-			<button type="button" data-section="all">tous <span id="number-all"></span></button>
+			<button type="button" data-section="school" class="project-btn active">école <span id="number-school"></span></button>
+			<button type="button" data-section="portfolio" class="project-btn">portfolio <span id="number-portfolio"></span></button>
+			<button type="button" data-section="other" class="project-btn">autre <span id="number-other"></span></button>
+			<button type="button" data-section="game" class="project-btn">jeux <span id="number-game"></span></button>
+			<button type="button" data-section="all" class="project-btn">tous <span id="number-all"></span></button>
 		</nav>
-		<section id="school"></section>
-		<section id="portfolio"></section>
-		<section id="other"></section>
-		<section id="game"></section>
-		<section id="all"></section>
+		<section class="project-container" id="school"></section>
+		<section class="project-container" id="portfolio"></section>
+		<section class="project-container" id="other"></section>
+		<section class="project-container" id="game"></section>
+		<section class="project-container" id="all"></section>
 	</section>
 </main>
 

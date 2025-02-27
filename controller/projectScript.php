@@ -2,17 +2,13 @@
 include_once '../config/database.php';
 global $bdd;
 
-$select = $bdd->prepare("select * from projets where type=? ");
-$select_all = $bdd->prepare("select * from projets order by date asc");
-
 $task = null;
 
 if (array_key_exists('task', $_GET)) {
   $task = $_GET['task'];
 }
 
-
-function getData($getData)
+function getData($query)
 {
   $captureRoad = '../sources/captureProjets/';
   $captureExt = '.PNG';
@@ -23,7 +19,7 @@ function getData($getData)
   $linkEnd = '.danybarbe.ovh';
 
   $getData = [];
-  foreach ($getData as $data) {
+  foreach ($query as $data) {
     $name = $data['name'];
     $date = $data['date'];
     $capture = $captureRoad . $data['capture'] . $captureExt;
@@ -62,11 +58,13 @@ function getData($getData)
 }
 
 if($task === 'all'){
+  $select_all = $bdd->prepare("select * from projets order by date asc");
   $select_all->execute();
   getData($select_all);
 }
 
 if($task != 'all'){
+  $select = $bdd->prepare("select * from projets where type=? ");
   $select->execute([$task]);
   getData($select);
 }
