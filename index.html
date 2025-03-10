@@ -72,7 +72,7 @@
 
 <main>
 	<!--link présentation-->
-	<section id="percentation" style="display: none">
+	<section id="presentation" style="display: none">
 		<div id="percentation-title">
 			<img src="sources/profile-picture.png" alt="photo de profile" id="profile-picture">
 			<h2 class="title-section">Présentation</h2>
@@ -372,17 +372,38 @@
 	<section id="projects">
 		<h2 class="title-section">Mes Projects</h2>
 		<nav>
-			<button type="button" data-section="school" class="project-btn active">école <span id="number-school"></span></button>
-			<button type="button" data-section="portfolio" class="project-btn">portfolio <span id="number-portfolio"></span></button>
-			<button type="button" data-section="other" class="project-btn">autre <span id="number-other"></span></button>
-			<button type="button" data-section="game" class="project-btn">jeux <span id="number-game"></span></button>
-			<button type="button" data-section="all" class="project-btn">tous <span id="number-all"></span></button>
+			<button type="button" data-section="school" class="project-btn active">
+				<p>école</p>
+				<span class="project-number" id="number-school"></span>
+			</button>
+
+			<button type="button" data-section="portfolio" class="project-btn">
+				<p>portfolio</p>
+				<span class="project-number" id="number-portfolio"></span>
+			</button>
+
+			<button type="button" data-section="other" class="project-btn">
+				<p>autre</p>
+				<span class="project-number" id="number-other"></span>
+			</button>
+
+			<button type="button" data-section="game" class="project-btn">
+				<p>jeux</p>
+				<span class="project-number" id="number-game"></span>
+			</button>
+
+			<button type="button" data-section="all" class="project-btn">
+				<p>tous</p>
+				<span class="project-number" id="number-all"></span>
+			</button>
 		</nav>
-		<section class="project-container" id="school"></section>
-		<section class="project-container" id="portfolio"></section>
-		<section class="project-container" id="other"></section>
-		<section class="project-container" id="game"></section>
-		<section class="project-container" id="all"></section>
+		<div class="projects-content">
+			<section class="project-container" id="school"></section>
+			<section class="project-container" id="portfolio"></section>
+			<section class="project-container" id="other"></section>
+			<section class="project-container" id="game"></section>
+			<section class="project-container" id="all"></section>
+		</div>
 	</section>
 </main>
 

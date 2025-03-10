@@ -29,10 +29,6 @@ body {
   }
 }
 
-.hidden{
-  display: none;
-}
-
 //Mobile
 @media screen and (min-width: 320px) {
   body {
@@ -122,8 +118,7 @@ body {
     main {
       @incldue flex(column, none, none, none);
       @include scrollbar(.2rem);
-      flex: 1;
-      overflow: auto;
+      overflow: hidden;
 
       .title-section {
         font-family: "Playwrite VN", serif;
@@ -272,7 +267,7 @@ body {
           height: 100%;
           //link techno
           .techno {
-            @include flex(column,center,none,none);
+            @include flex(column, center, none, none);
             //link cards-container
             .cards-container {
               @include flex(row, none, center, .5rem);
@@ -349,21 +344,143 @@ body {
 
       //link projects
       #projects {
+        @include flex(column, none, none, none);
         //link nav
-        nav{
+        nav {
+          @include flex(row, none, none, .2rem);
           margin-top: .5rem;
-          padding: .5rem;
-          @include flex(row, center, none, .5rem);
-          //link button
-          button{
-            border: 1px solid;
+          //link project-btn
+          .project-btn {
+            @include flex(column, center, center, .2rem);
+            position: relative;
+            width: 90%;
+            padding: .2rem 0;
+            border: 2px solid;
             border-bottom: none;
             border-radius: 5px 5px 0 0;
-            padding-top: .2rem;
-            width: 20rem;
-            height: 2rem;
-            &:first-letter{
-              text-transform: uppercase;
+            font-weight: bold;
+
+            p {
+              &:first-letter {
+                text-transform: uppercase;
+              }
+            }
+
+            //link project-number
+            .project-number {
+              &:before {
+                content: '[';
+                margin-right: .1rem;
+              }
+
+              &:after {
+                content: ']';
+                margin-left: .1rem;
+              }
+            }
+          }
+        }
+
+        //link projects-content
+        .projects-content {
+          display: flex;
+          flex-direction: column;
+          //link project-container
+          .project-container {
+            @include flex(column, none, none, .5rem);
+            @include scrollbar(.2rem);
+            height: 40rem;
+            overflow: scroll;
+            //link project-card
+            .project-card {
+              @include flex(column, none, none, none);
+              border: 1px solid;
+              border-left: none;
+              border-right: none;
+              padding: .5rem 0;
+              position: sticky;
+              top: 0;
+              //link info-container
+              .info-container {
+                @include flex(column-reverse, none, none, none);
+                //link image-content
+                .image-content {
+                  width: 100%;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                //link title-and-info
+                .title-and-info {
+                  @include flex(column, none, none, none);
+
+                  .title-content {
+                    @include flex(row, center, center, .5rem);
+                  }
+
+                  .tech-and-link {
+                    @include flex(row, none, none, .5rem);
+
+                    ul, .link-content {
+                      width: 50%;
+                    }
+
+                    ul {
+                      display: flex;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                      gap: .5rem;
+                      padding-left: .5rem;
+
+                      li {
+                        display: flex;
+                        align-items: center;
+
+                        &:before {
+                          content: '•';
+                          margin-right: .2rem;
+                        }
+                      }
+                    }
+
+                    .link-content {
+                      @include flex(column, center, space-around, .5rem);
+
+                      a {
+                        @include flex(row-reverse, none, none, none);
+                        position: relative;
+                        padding-bottom: .2rem;
+
+                        &:before {
+                          content: '';
+                          position: absolute;
+                          width: 100%;
+                          height: .1rem;
+                          bottom: 0;
+                        }
+
+                        .icon-content {
+                          width: 1.2rem;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .description-content {
+                @include scrollbar(.2rem);
+                overflow: auto;
+                max-height: 17rem;
+                padding: 0 .1rem;
+
+                .description {
+                  text-align: justify;
+                }
+              }
             }
           }
         }
@@ -512,22 +629,128 @@ body {
             width: 50%;
             height: 100%;
             //link title techno
-            h3{
+            h3 {
               font-size: 2rem;
             }
+
             //link cards-container
-            .cards-container{
-              @include flex(row,none,space-around,none);
+            .cards-container {
+              @include flex(row, none, space-around, none);
               flex-wrap: wrap;
               width: 70%;
               height: 100%;
             }
+
             //link skill-card
-            .skill-card{
+            .skill-card {
               width: 5rem;
             }
           }
         }
+      }
+
+      //link project
+      #projects {
+        //link nav
+        nav {
+          //link project-btn
+          .project-btn {
+            cursor: pointer;
+
+            &:before {
+              content: '';
+              height: 0;
+              transition: height ease .5s;
+              z-index: -1;
+            }
+
+            &:hover {
+              &:before {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            &.active {
+              &:before {
+                content: '';
+                position: absolute;
+                transition: height ease .5s;
+                top: 0;
+                width: 100%;
+                height: 100%;
+              }
+
+              &:hover {
+                &:before {
+                  height: 0;
+                }
+              }
+            }
+
+          }
+        }
+
+        //link projects-content
+        .projects-content {
+          //link project-container
+          .project-container {
+            height: 50rem;
+            //link project-card
+            .project-card {
+              //link info-container
+              .info-container {
+                @include flex(row, none, space-around, none);
+                //link image-content
+                .image-content {
+                  width: 25%;
+                }
+
+                //link title-and-info
+                .title-and-info {
+                  width: 25%;
+
+                  .title-content {
+                    @include flex(column, none, none, none);
+                  }
+
+                  .tech-and-link {
+                    ul {
+                      @include flex(column, none, none, none);
+
+                    }
+
+                    .link-content {
+                      a {
+                        &:before {
+                          transition: all ease .5s;
+                        }
+
+                        &:hover {
+                          &:before {
+                            z-index: -1;
+                            height: 100%;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .description-content {
+                @include flex(column, center, none, none);
+                margin-top: .5rem;
+
+                .description {
+                }
+              }
+            }
+          }
+        }
+
       }
     }
   }
@@ -673,14 +896,40 @@ body.dark {
     }
 
     //link projects
-    #projects{
-      nav{
-        button{
+    #projects {
+      nav {
+        //link project-btn
+        .project-btn {
           color: $color-dark;
           border-color: $color-dark;
-          &.active{
-            background: rgba($accent-dark,.5);
+
+          &:before {
+            background: $accent-dark;
           }
+        }
+      }
+
+      .project-container {
+        &::-webkit-scrollbar {
+          background: $color-dark;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $accent-dark;
+        }
+      }
+
+      .project-card {
+        background: $background-dark;
+      }
+
+      .description-content {
+        &::-webkit-scrollbar {
+          background: $color-dark;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $accent-dark;
         }
       }
     }

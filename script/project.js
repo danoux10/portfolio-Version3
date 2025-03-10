@@ -51,6 +51,8 @@ function CreateCard(container, name, date, capture, techs, lien, github, descrip
   iconContentLink.classList.add('icon-content');
   iconContentLink.innerHTML = linkIcon;
 
+  linkContainer.appendChild(iconContentLink);
+
   let githubContent = document.createElement('a');
   githubContent.href = github;
   githubContent.textContent = "Voir le github";
@@ -71,20 +73,21 @@ function CreateCard(container, name, date, capture, techs, lien, github, descrip
 
 
   projectCard.appendChild(infoContainer);
-  infoContainer.appendChild(imageContent);
-  imageContent.appendChild(img);
-  infoContainer.appendChild(titleAndInfo);
-  titleAndInfo.appendChild(title);
-  titleAndInfo.appendChild(dateContent);
-  titleAndInfo.appendChild(techAndLink);
-  techAndLink.appendChild(techContent);
-  techAndLink.appendChild(linkContent);
-  linkContent.appendChild(linkContainer);
-  if (github) {
-    linkContent.appendChild(githubContent);
-  }
-  projectCard.appendChild(descriptionContent);
-  descriptionContent.appendChild(descriptionText);
+    infoContainer.appendChild(imageContent);
+      imageContent.appendChild(img);
+    infoContainer.appendChild(titleAndInfo);
+      titleAndInfo.appendChild(titleContent);
+        titleContent.appendChild(title);
+        titleContent.appendChild(dateContent);
+    titleAndInfo.appendChild(techAndLink);
+      techAndLink.appendChild(techContent);
+      techAndLink.appendChild(linkContent);
+       linkContent.appendChild(linkContainer);
+      if (github) {
+       linkContent.appendChild(githubContent);
+      }
+    projectCard.appendChild(descriptionContent);
+    descriptionContent.appendChild(descriptionText);
   container.appendChild(projectCard);
 }
 
