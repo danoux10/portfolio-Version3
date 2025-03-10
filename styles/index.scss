@@ -390,7 +390,13 @@ body {
             @include flex(column, none, none, .5rem);
             @include scrollbar(.2rem);
             height: 40rem;
+            width: 100%;
             overflow: scroll;
+            transition: height ease .5s;
+            &.hidden{
+              width: 0;
+              height: 0;
+            }
             //link project-card
             .project-card {
               @include flex(column, none, none, none);
