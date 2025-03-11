@@ -14,6 +14,11 @@ body {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
 .icon-content {
   display: flex;
   align-items: center;
@@ -25,19 +30,11 @@ body {
 }
 
 body {
-  transition: all ease 0.5s;
   position: relative;
-  height: 100vh;
   overflow: auto;
   display: flex;
   flex-direction: column;
-}
-body a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  gap: 0.5rem;
+  height: 100vh;
 }
 body #header-container {
   border-bottom: 2px solid;
@@ -51,7 +48,7 @@ body h2 {
 }
 
 @media screen and (min-width: 320px) {
-  body #header-container {
+  #header-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -60,7 +57,7 @@ body h2 {
     padding: 0.2rem;
     position: relative;
   }
-  body #header-container #theme-button {
+  #header-container #theme-button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -70,11 +67,11 @@ body h2 {
     order: 1;
     padding: 0.2rem;
   }
-  body #header-container #theme-button .icon-content {
+  #header-container #theme-button .icon-content {
     width: 90%;
     height: 90%;
   }
-  body #header-container #navbar-container {
+  #header-container #navbar-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -84,28 +81,28 @@ body h2 {
     transition: width ease 0.5s;
     overflow: hidden;
   }
-  body #header-container #navbar-container.close {
+  #header-container #navbar-container.close {
     width: 0;
     border: none;
   }
-  body #header-container #navbar-container #close-button {
+  #header-container #navbar-container #close-button {
     width: 2rem;
     height: 2rem;
     position: absolute;
     top: 0.2rem;
     right: 0.5rem;
   }
-  body #header-container #navbar-container #navbar {
+  #header-container #navbar-container #navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     height: 100%;
   }
-  body #header-container #navbar-container #navbar a {
+  #header-container #navbar-container #navbar button {
     padding: 0.5rem;
   }
-  body #header-container #navbar-container #navbar a:before {
+  #header-container #navbar-container #navbar button:before {
     content: "";
     transition: all ease 0.5s;
     position: absolute;
@@ -113,17 +110,17 @@ body h2 {
     width: 100%;
     height: 0.2rem;
   }
-  body #header-container #navbar-container #navbar a .icon-content {
+  #header-container #navbar-container #navbar button .icon-content {
     width: 2rem;
     height: 2rem;
   }
-  body #header-container #navbar-container #navbar a .link-value {
+  #header-container #navbar-container #navbar button .link-value {
     font-weight: bold;
   }
-  body #header-container #navbar-container #navbar a .link-value:first-letter {
+  #header-container #navbar-container #navbar button .link-value:first-letter {
     text-transform: uppercase;
   }
-  body #header-container #hamburger-button {
+  #header-container #hamburger-button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -132,33 +129,129 @@ body h2 {
     border: 2px solid;
     border-radius: 0.5rem;
   }
-  body #header-container #hamburger-button .icon-content {
+  #header-container #hamburger-button .icon-content {
     width: 2rem;
     height: 2rem;
   }
-  body main {
-    @incldue flex(column, none, none, none);
-    overflow: hidden;
+}
+@media screen and (min-width: 1280px) {
+  #header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
   }
-  body main::-webkit-scrollbar {
-    width: 0.2rem;
+  #header-container #theme-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    order: 2;
+    width: 6rem;
+    height: auto;
+    padding: 0.2rem;
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+  #header-container #theme-button.active {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #header-container #theme-button .icon-content {
+    width: 2rem;
+    height: 2rem;
     border-radius: 50px;
+    padding: 0.2rem;
+    transition: all ease 0.5s;
   }
-  body main::-webkit-scrollbar-thumb {
+  #header-container #navbar-container {
+    position: relative;
+    width: 80%;
+    height: auto;
+    border: none;
+  }
+  #header-container #navbar-container.close {
     width: 100%;
-    border-radius: 50px;
   }
-  body main .title-section {
-    font-family: "Playwrite VN", serif;
+  #header-container #navbar-container #close-button {
+    display: none;
   }
-  body main #presentation {
+  #header-container #navbar-container #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background: none;
+  }
+  #header-container #navbar-container #navbar button {
+    position: relative;
+    position: relative;
+    z-index: 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  #header-container #navbar-container #navbar button:before, #header-container #navbar-container #navbar button:after {
+    content: "";
+    transition: all ease 0.5s;
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+  }
+  #header-container #navbar-container #navbar button:after {
+    height: 100%;
+    width: 0;
+    z-index: -1;
+  }
+  #header-container #navbar-container #navbar button:before {
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+  }
+  #header-container #navbar-container #navbar button:hover:before {
+    width: 0;
+  }
+  #header-container #navbar-container #navbar button:hover:after {
+    width: 100%;
+  }
+  #header-container #navbar-container #navbar button.active {
+    position: relative;
+  }
+  #header-container #navbar-container #navbar button.active:before {
+    width: 0;
+  }
+  #header-container #navbar-container #navbar button.active:after {
+    width: 100%;
+    height: 100%;
+  }
+  #header-container #navbar-container #navbar button.active:hover:before {
+    width: 100%;
+  }
+  #header-container #navbar-container #navbar button.active:hover:after {
+    width: 0;
+  }
+  #header-container #navbar-container #navbar button .icon-content {
+    width: 2rem;
+    height: 2rem;
+  }
+  #header-container #navbar-container #navbar button .link-value {
+    font-weight: bold;
+  }
+  #header-container #navbar-container #navbar button .link-value:first-letter {
+    text-transform: uppercase;
+  }
+  #header-container #hamburger-button {
+    display: none;
+  }
+}
+@media screen and (min-width: 320px) {
+  #presentation {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    width: 100%;
   }
-  body main #presentation #presentation-title {
+  #presentation #presentation-title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -166,11 +259,11 @@ body h2 {
     width: 100%;
     margin-top: 0.2rem;
   }
-  body main #presentation #presentation-title img {
+  #presentation #presentation-title img {
     height: 6rem;
     border-radius: 10px;
   }
-  body main #presentation #presentation-text {
+  #presentation #presentation-text {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,16 +272,16 @@ body h2 {
     text-align: center;
     padding: 0 0.5rem;
   }
-  body main #presentation #presentation-text p:first-letter {
+  #presentation #presentation-text p:first-letter {
     text-transform: uppercase;
   }
-  body main #presentation #presentation-info {
+  #presentation #presentation-info {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 50%;
   }
-  body main #presentation #presentation-info .information {
+  #presentation #presentation-info .information {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -196,64 +289,90 @@ body h2 {
     gap: 0.5rem;
     flex-wrap: wrap;
   }
-  body main #presentation #presentation-info .information a {
+  #presentation #presentation-info .information a {
     position: relative;
     padding-bottom: 0.3rem;
   }
-  body main #presentation #presentation-info .information a:before, body main #presentation #presentation-info .information a:after {
+  #presentation #presentation-info .information a:before, #presentation #presentation-info .information a:after {
     content: "";
     transition: all ease 0.5s;
     position: absolute;
     left: 0;
     border-radius: 5px;
   }
-  body main #presentation #presentation-info .information a:after {
+  #presentation #presentation-info .information a:after {
     height: 100%;
     width: 0;
     z-index: -1;
   }
-  body main #presentation #presentation-info .information a:before {
+  #presentation #presentation-info .information a:before {
     width: 100%;
     height: 0.2rem;
     bottom: 0;
   }
-  body main #presentation #presentation-info .information a:hover:before {
+  #presentation #presentation-info .information a:hover:before {
     width: 0;
   }
-  body main #presentation #presentation-info .information a:hover:after {
+  #presentation #presentation-info .information a:hover:after {
     width: 100%;
   }
-  body main #presentation #presentation-info .information .info-content {
+  #presentation #presentation-info .information .info-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
   }
-  body main #presentation #presentation-info .information .info-content .label:after {
+  #presentation #presentation-info .information .info-content .label:after {
     content: ":";
     margin-left: 0.2rem;
   }
-  body main #presentation #presentation-info .information .info-content .icon-content {
+  #presentation #presentation-info .information .info-content .icon-content {
     width: 2rem;
     height: 2rem;
   }
-  body main #presentation #presentation-info .information#lien {
+  #presentation #presentation-info .information#lien {
     margin-top: 0.6rem;
   }
-  body main #diploma {
+}
+@media screen and (min-width: 1280px) {
+  #presentation p, #presentation a {
+    font-size: 1.5rem;
+  }
+  #presentation #presentation-title {
+    width: 40%;
+  }
+  #presentation #presentation-info {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+  }
+  #presentation #presentation-info .information {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    justify-content: space-around;
   }
-  body main #diploma #timeline {
+  #presentation #presentation-info .information a {
+    padding: 0.5rem;
+  }
+  #presentation #presentation-info .information#lien {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 320px) {
+  #diploma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #diploma #timeline {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: relative;
     height: 100%;
   }
-  body main #diploma #timeline:before {
+  #diploma #timeline:before {
     content: "";
     position: absolute;
     width: 0.5rem;
@@ -263,49 +382,50 @@ body h2 {
     border: 4px solid;
     z-index: -1;
   }
-  body main #diploma #timeline .diploma-card {
+  #diploma #timeline .diploma-card {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  body main #diploma #timeline .diploma-card .date {
+  #diploma #timeline .diploma-card .date {
     text-align: center;
     border: 2px solid;
     border-radius: 10px;
     padding: 0.5rem;
     margin-right: 1rem;
   }
-  body main #diploma #timeline .diploma-card .card-content {
+  #diploma #timeline .diploma-card .card-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     position: relative;
     padding: 0.2rem;
   }
-  body main #diploma #timeline .diploma-card .card-content .icon-content {
+  #diploma #timeline .diploma-card .card-content .icon-content {
     width: 2rem;
     height: 2rem;
     position: absolute;
     left: -1rem;
     z-index: -1;
   }
-  body main #diploma #timeline .diploma-card .card-content .diploma-name {
+  #diploma #timeline .diploma-card .card-content .diploma-name {
     padding: 0.5rem;
     border-radius: 10px;
   }
-  body main #diploma #timeline .diploma-card .card-content .diploma-name p {
+  #diploma #timeline .diploma-card .card-content .diploma-name p {
     text-align: center;
   }
-  body main #diploma #timeline .diploma-card .card-content .diploma-name .diploma-title {
+  #diploma #timeline .diploma-card .card-content .diploma-name .diploma-title {
     font-weight: bold;
   }
-  body main #skills {
+}
+@media screen and (min-width: 320px) {
+  #skills {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
   }
-  body main #skills #language-container {
+  #skills #language-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -313,12 +433,12 @@ body h2 {
     width: 100%;
     height: 100%;
   }
-  body main #skills #language-container .techno {
+  #skills #language-container .techno {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  body main #skills #language-container .techno .cards-container {
+  #skills #language-container .techno .cards-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -326,7 +446,7 @@ body h2 {
     flex-wrap: wrap;
     width: 100%;
   }
-  body main #skills #language-container .techno .cards-container .skill-card {
+  #skills #language-container .techno .cards-container .skill-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -337,18 +457,18 @@ body h2 {
     height: 9rem;
     padding: 0.5rem;
   }
-  body main #skills #language-container .techno .cards-container .skill-card .skill-title {
+  #skills #language-container .techno .cards-container .skill-card .skill-title {
     text-transform: uppercase;
     font-weight: bold;
   }
-  body main #skills #language-container .techno .cards-container .skill-card .skill-icon svg {
+  #skills #language-container .techno .cards-container .skill-card .skill-icon svg {
     width: 2.5rem;
     height: 100%;
   }
-  body main #skills #language-container .techno .cards-container .skill-card .skill-icon.small-icon svg {
+  #skills #language-container .techno .cards-container .skill-card .skill-icon.small-icon svg {
     width: 3.5rem;
   }
-  body main #skills #language-container .techno .cards-container .skill-card .percent {
+  #skills #language-container .techno .cards-container .skill-card .percent {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -356,13 +476,13 @@ body h2 {
     gap: 0.5rem;
     width: 100%;
   }
-  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-value:before {
+  #skills #language-container .techno .cards-container .skill-card .percent .percent-value:before {
     content: "~ ";
   }
-  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-value:after {
+  #skills #language-container .techno .cards-container .skill-card .percent .percent-value:after {
     content: "%";
   }
-  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-bar {
+  #skills #language-container .techno .cards-container .skill-card .percent .percent-bar {
     display: block;
     width: 100%;
     height: 0.6rem;
@@ -371,24 +491,46 @@ body h2 {
     border-radius: 5px;
     border: 2px solid;
   }
-  body main #skills #language-container .techno .cards-container .skill-card .percent .percent-bar:before {
+  #skills #language-container .techno .cards-container .skill-card .percent .percent-bar:before {
     transition: width ease 0.5s;
     content: "";
     position: absolute;
     height: 100%;
     width: var(--percent);
   }
-  body main #projects {
+}
+@media screen and (min-width: 1280px) {
+  #skills #language-container .techno {
+    width: 50%;
+    height: 100%;
+  }
+  #skills #language-container .techno h3 {
+    font-size: 2rem;
+  }
+  #skills #language-container .techno .cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100%;
+  }
+  #skills #language-container .techno .skill-card {
+    width: 5rem;
+  }
+}
+@media screen and (min-width: 320px) {
+  #projects {
     display: flex;
     flex-direction: column;
   }
-  body main #projects nav {
+  #projects nav {
     display: flex;
     flex-direction: row;
     gap: 0.2rem;
     margin-top: 0.5rem;
   }
-  body main #projects nav .project-btn {
+  #projects nav .project-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -402,22 +544,22 @@ body h2 {
     border-radius: 5px 5px 0 0;
     font-weight: bold;
   }
-  body main #projects nav .project-btn p:first-letter {
+  #projects nav .project-btn p:first-letter {
     text-transform: uppercase;
   }
-  body main #projects nav .project-btn .project-number:before {
+  #projects nav .project-btn .project-number:before {
     content: "[";
     margin-right: 0.1rem;
   }
-  body main #projects nav .project-btn .project-number:after {
+  #projects nav .project-btn .project-number:after {
     content: "]";
     margin-left: 0.1rem;
   }
-  body main #projects .projects-content {
+  #projects .projects-content {
     display: flex;
     flex-direction: column;
   }
-  body main #projects .projects-content .project-container {
+  #projects .projects-content .project-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -426,19 +568,19 @@ body h2 {
     overflow: scroll;
     transition: height ease 0.5s;
   }
-  body main #projects .projects-content .project-container::-webkit-scrollbar {
+  #projects .projects-content .project-container::-webkit-scrollbar {
     width: 0.2rem;
     border-radius: 50px;
   }
-  body main #projects .projects-content .project-container::-webkit-scrollbar-thumb {
+  #projects .projects-content .project-container::-webkit-scrollbar-thumb {
     width: 100%;
     border-radius: 50px;
   }
-  body main #projects .projects-content .project-container.hidden {
+  #projects .projects-content .project-container.hidden {
     width: 0;
     height: 0;
   }
-  body main #projects .projects-content .project-container .project-card {
+  #projects .projects-content .project-container .project-card {
     display: flex;
     flex-direction: column;
     border: 1px solid;
@@ -448,90 +590,216 @@ body h2 {
     position: sticky;
     top: 0;
   }
-  body main #projects .projects-content .project-container .project-card .info-container {
+  #projects .projects-content .project-container .project-card .info-container {
     display: flex;
     flex-direction: column-reverse;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .image-content {
+  #projects .projects-content .project-container .project-card .info-container .image-content {
     width: 100%;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .image-content img {
+  #projects .projects-content .project-container .project-card .info-container .image-content img {
     width: 100%;
     height: 100%;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info {
     display: flex;
     flex-direction: column;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .title-content {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .title-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul, body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul, #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content {
     width: 50%;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
     padding-left: 0.5rem;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul li {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul li {
     display: flex;
     align-items: center;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul li:before {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul li:before {
     content: "•";
     margin-right: 0.2rem;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 0.5rem;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a {
     display: flex;
     flex-direction: row-reverse;
     position: relative;
     padding-bottom: 0.2rem;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a:before {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a:before {
     content: "";
     position: absolute;
     width: 100%;
     height: 0.1rem;
     bottom: 0;
   }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a .icon-content {
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a .icon-content {
     width: 1.2rem;
   }
-  body main #projects .projects-content .project-container .project-card .description-content {
+  #projects .projects-content .project-container .project-card .description-content {
     overflow: auto;
     max-height: 17rem;
     padding: 0 0.1rem;
   }
-  body main #projects .projects-content .project-container .project-card .description-content::-webkit-scrollbar {
+  #projects .projects-content .project-container .project-card .description-content::-webkit-scrollbar {
     width: 0.2rem;
     border-radius: 50px;
   }
-  body main #projects .projects-content .project-container .project-card .description-content::-webkit-scrollbar-thumb {
+  #projects .projects-content .project-container .project-card .description-content::-webkit-scrollbar-thumb {
     width: 100%;
     border-radius: 50px;
   }
-  body main #projects .projects-content .project-container .project-card .description-content .description {
+  #projects .projects-content .project-container .project-card .description-content .description {
     text-align: justify;
   }
+}
+@media screen and (min-width: 1280px) {
+  #projects nav .project-btn {
+    cursor: pointer;
+  }
+  #projects nav .project-btn:before {
+    content: "";
+    height: 0;
+    transition: height ease 0.5s;
+    z-index: -1;
+  }
+  #projects nav .project-btn:hover:before {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #projects nav .project-btn.active:before {
+    content: "";
+    position: absolute;
+    transition: height ease 0.5s;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #projects nav .project-btn.active:hover:before {
+    height: 0;
+  }
+  #projects .projects-content .project-container {
+    height: 50rem;
+  }
+  #projects .projects-content .project-container .project-card .info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #projects .projects-content .project-container .project-card .info-container .image-content {
+    width: 25%;
+  }
+  #projects .projects-content .project-container .project-card .info-container .title-and-info {
+    width: 25%;
+  }
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .title-content {
+    display: flex;
+    flex-direction: column;
+  }
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul {
+    display: flex;
+    flex-direction: column;
+  }
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a:before {
+    transition: all ease 0.5s;
+  }
+  #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a:hover:before {
+    z-index: -1;
+    height: 100%;
+  }
+  #projects .projects-content .project-container .project-card .description-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+}
+@media screen and (min-width: 320px) {
+  #objective {
+    height: 98%;
+  }
+  #objective .objective-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    height: 100%;
+  }
+  #objective .objective-content .objective-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #objective .objective-content .objective-section#improve {
+    height: 25%;
+  }
+  #objective .objective-content .objective-section .objective-card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  #objective .objective-content .objective-section .objective-card-content .objective-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    width: 20%;
+    padding: 0.5rem;
+  }
+  #objective .objective-content .objective-section .objective-card-content .objective-card .icon-content {
+    width: 50%;
+  }
+  #objective .objective-content .objective-section .objective-card-content .objective-card p {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #objective .objective-content {
+    display: flex;
+    flex-direction: row;
+  }
+  #objective .objective-content .objective-section {
+    width: 50%;
+  }
+  #objective .objective-content .objective-section#improve {
+    height: 100%;
+  }
+  #objective .objective-content .objective-card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #objective .objective-content .objective-card-content .objective-card {
+    height: 20%;
+  }
+}
+@media screen and (min-width: 320px) {
   footer {
     display: flex;
     flex-direction: row;
@@ -578,218 +846,6 @@ body h2 {
   }
 }
 @media screen and (min-width: 1280px) {
-  body #header-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0.5rem;
-  }
-  body #header-container #theme-button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    order: 2;
-    width: 6rem;
-    height: auto;
-    padding: 0.2rem;
-    cursor: pointer;
-    transition: all ease 0.5s;
-  }
-  body #header-container #theme-button.active {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  body #header-container #theme-button .icon-content {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50px;
-    padding: 0.2rem;
-    transition: all ease 0.5s;
-  }
-  body #header-container #navbar-container {
-    position: relative;
-    width: 80%;
-    height: auto;
-    border: none;
-  }
-  body #header-container #navbar-container.close {
-    width: 100%;
-  }
-  body #header-container #navbar-container #close-button {
-    display: none;
-  }
-  body #header-container #navbar-container #navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background: none;
-  }
-  body #header-container #navbar-container #navbar a {
-    position: relative;
-    position: relative;
-    z-index: 0;
-    padding: 0.5rem;
-    border-radius: 5px;
-  }
-  body #header-container #navbar-container #navbar a:before, body #header-container #navbar-container #navbar a:after {
-    content: "";
-    transition: all ease 0.5s;
-    position: absolute;
-    left: 0;
-    border-radius: 5px;
-  }
-  body #header-container #navbar-container #navbar a:after {
-    height: 100%;
-    width: 0;
-    z-index: -1;
-  }
-  body #header-container #navbar-container #navbar a:before {
-    width: 100%;
-    height: 0.2rem;
-    bottom: 0;
-  }
-  body #header-container #navbar-container #navbar a:hover:before {
-    width: 0;
-  }
-  body #header-container #navbar-container #navbar a:hover:after {
-    width: 100%;
-  }
-  body #header-container #navbar-container #navbar a.active {
-    position: relative;
-  }
-  body #header-container #navbar-container #navbar a.active:before {
-    width: 0;
-  }
-  body #header-container #navbar-container #navbar a.active:after {
-    width: 100%;
-    height: 100%;
-    border: 2px solid;
-  }
-  body #header-container #navbar-container #navbar a.active:hover:before {
-    width: 100%;
-  }
-  body #header-container #navbar-container #navbar a.active:hover:after {
-    width: 0;
-    border: none;
-  }
-  body #header-container #navbar-container #navbar a .icon-content {
-    width: 2rem;
-    height: 2rem;
-  }
-  body #header-container #navbar-container #navbar a .link-value {
-    font-weight: bold;
-  }
-  body #header-container #navbar-container #navbar a .link-value:first-letter {
-    text-transform: uppercase;
-  }
-  body #header-container #hamburger-button {
-    display: none;
-  }
-  body main #presentation p, body main #presentation a {
-    font-size: 1.5rem;
-  }
-  body main #presentation #presentation-title {
-    width: 40%;
-  }
-  body main #presentation #presentation-info {
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-  }
-  body main #presentation #presentation-info .information {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-  body main #presentation #presentation-info .information a {
-    padding: 0.5rem;
-  }
-  body main #presentation #presentation-info .information#lien {
-    margin: 0;
-  }
-  body main #skills #language-container .techno {
-    width: 50%;
-    height: 100%;
-  }
-  body main #skills #language-container .techno h3 {
-    font-size: 2rem;
-  }
-  body main #skills #language-container .techno .cards-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 70%;
-    height: 100%;
-  }
-  body main #skills #language-container .techno .skill-card {
-    width: 5rem;
-  }
-  body main #projects nav .project-btn {
-    cursor: pointer;
-  }
-  body main #projects nav .project-btn:before {
-    content: "";
-    height: 0;
-    transition: height ease 0.5s;
-    z-index: -1;
-  }
-  body main #projects nav .project-btn:hover:before {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-  body main #projects nav .project-btn.active:before {
-    content: "";
-    position: absolute;
-    transition: height ease 0.5s;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-  body main #projects nav .project-btn.active:hover:before {
-    height: 0;
-  }
-  body main #projects .projects-content .project-container {
-    height: 50rem;
-  }
-  body main #projects .projects-content .project-container .project-card .info-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  body main #projects .projects-content .project-container .project-card .info-container .image-content {
-    width: 25%;
-  }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info {
-    width: 25%;
-  }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .title-content {
-    display: flex;
-    flex-direction: column;
-  }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link ul {
-    display: flex;
-    flex-direction: column;
-  }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a:before {
-    transition: all ease 0.5s;
-  }
-  body main #projects .projects-content .project-container .project-card .info-container .title-and-info .tech-and-link .link-content a:hover:before {
-    z-index: -1;
-    height: 100%;
-  }
-  body main #projects .projects-content .project-container .project-card .description-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 0.5rem;
-  }
   footer {
     display: flex;
     flex-direction: row;
@@ -835,11 +891,47 @@ body h2 {
     height: 2rem;
   }
 }
+@media screen and (min-width: 320px) {
+  body a, body button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+  }
+  body main {
+    @incldue flex(column, none, none, none);
+    overflow: hidden;
+    height: 100%;
+  }
+  body main::-webkit-scrollbar {
+    width: 0.2rem;
+    border-radius: 50px;
+  }
+  body main::-webkit-scrollbar-thumb {
+    width: 100%;
+    border-radius: 50px;
+  }
+  body main .title-section {
+    font-family: "Playwrite VN", serif;
+  }
+}
+.portfolio-section {
+  height: 100%;
+  transition: height ease 0.5s;
+}
+.portfolio-section.hidden {
+  height: 0;
+  width: 0;
+  transform: scale(0);
+  overflow: hidden;
+}
+
 body.dark {
   background: #171717;
   color: #e3e3e3;
 }
-body.dark a, body.dark svg {
+body.dark a, body.dark svg, body.dark button {
   color: #e3e3e3;
   fill: #e3e3e3;
 }
@@ -870,10 +962,10 @@ body.dark #header-container #navbar-container #close-button {
 body.dark #header-container #navbar-container #navbar {
   background: #171717;
 }
-body.dark #header-container #navbar-container #navbar a:before, body.dark #header-container #navbar-container #navbar a:after {
+body.dark #header-container #navbar-container #navbar button:before, body.dark #header-container #navbar-container #navbar button:after {
   background: #8d0fde;
 }
-body.dark #header-container #navbar-container #navbar a.active:after {
+body.dark #header-container #navbar-container #navbar button.active:after {
   border-color: #e3e3e3;
 }
 body.dark #header-container #hamburger-button {

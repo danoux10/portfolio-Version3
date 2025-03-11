@@ -1,0 +1,106 @@
+//Mobile
+@media screen and (min-width: 320px){
+  #skills {
+    @include flex(column, center, none, none);
+    #language-container {
+      @include flex(row, center, none, none);
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
+      .techno {
+        @include flex(column, center, none, none);
+        .cards-container {
+          @include flex(row, none, center, .5rem);
+          flex-wrap: wrap;
+          width: 100%;
+          .skill-card {
+            @include flex(column, center, space-around, none);
+            border: 2px solid;
+            border-radius: 5px;
+            width: 8rem;
+            height: 9rem;
+            padding: .5rem;
+            .skill-title {
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+
+            .skill-icon {
+              //width: 2rem;
+              svg {
+                width: 2.5rem;
+                height: 100%;
+              }
+
+              &.small-icon {
+                svg {
+                  width: 3.5rem;
+                }
+              }
+            }
+
+            .percent {
+              @include flex(column, center, center, .5rem);
+              width: 100%;
+              .percent-value {
+                &:before {
+                  content: '~ ';
+                }
+
+                &:after {
+                  content: '%';
+                }
+              }
+
+              .percent-bar {
+                display: block;
+                width: 100%;
+                height: .6rem;
+                position: relative;
+                overflow: hidden;
+                border-radius: 5px;
+                border: 2px solid;
+
+                &:before {
+                  transition: width ease .5s;
+                  content: '';
+                  position: absolute;
+                  height: 100%;
+                  width: var(--percent);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Laptop
+@media screen and (min-width: 1280px){
+  #skills {
+    #language-container {
+      .techno {
+        width: 50%;
+        height: 100%;
+        h3 {
+          font-size: 2rem;
+        }
+
+        .cards-container {
+          @include flex(row, none, space-around, none);
+          flex-wrap: wrap;
+          width: 70%;
+          height: 100%;
+        }
+
+        .skill-card {
+          width: 5rem;
+        }
+      }
+    }
+  }
+}
+
+//Theme

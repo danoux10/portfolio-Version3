@@ -1,0 +1,66 @@
+//Mobile
+@media screen and (min-width: 320px) {
+  #objective {
+    height: 98%;
+
+    .objective-content {
+      @include flex(column, none, none, none);
+      margin-top: .5rem;
+      height: 100%;
+
+      .objective-section {
+        @include flex(column, center, none, none);
+
+        &#improve {
+          height: 25%;
+        }
+
+        .objective-card-content {
+          @include flex(row, none, space-around, none);
+          flex-wrap: wrap;
+
+          .objective-card {
+            @include flex(column, center, space-around, .5rem);
+            width: 20%;
+            padding: .5rem;
+
+            .icon-content {
+              width: 50%;
+            }
+
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Laptop
+@media screen and (min-width: 1280px) {
+  #objective {
+    .objective-content {
+      @include flex(row, none, none, none);
+
+      .objective-section {
+        width: 50%;
+
+        &#improve {
+          height: 100%;
+        }
+      }
+
+      .objective-card-content {
+        height: 100%;
+        @include flex(row, none, space-around, none);
+        .objective-card{
+          height: 20%;
+        }
+      }
+    }
+  }
+}
+
+//Theme
