@@ -8,6 +8,7 @@ if (array_key_exists('task', $_GET)) {
   $task = $_GET['task'];
 }
 
+
 function getData($query)
 {
   $captureRoad = '../sources/captureProjets/';
@@ -15,7 +16,6 @@ function getData($query)
 
   $githubRoad = 'https://github.com/danoux10/';
 
-  $linkStart = 'http://';
   $linkEnd = '.danybarbe.ovh';
 
   $getData = [];
@@ -29,10 +29,10 @@ function getData($query)
     $git = $data['github'];
     $description = $data['description'];
 
-    if ($location == 1) {
-      $link = $linkStart . $lien . $linkEnd;
-    } else {
+    if ($location == 0) {
       $link = $lien;
+    } else {
+      $link = $lien . $linkEnd;
     }
 
     if ($git) {

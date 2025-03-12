@@ -108,6 +108,7 @@ function getData(container, Getdata) {
         let lien = data.lien;
         let github = data.github;
         let description = data.description;
+        console.info(lien);
         CreateCard(container, name, date, capture, techs, lien, github, description);
       }
     } else if (this.readyState === 4 && this.status === 404) {

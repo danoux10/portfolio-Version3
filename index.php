@@ -20,6 +20,7 @@
     include_once 'pages/diplomas.html';
     include_once 'pages/skills.html';
     include_once 'pages/projects.html';
+    include_once 'pages/objectives.html';
   ?>
 </main>
 <?php include_once 'pages/footer.html'; ?>
