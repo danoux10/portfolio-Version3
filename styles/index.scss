@@ -1,6 +1,7 @@
 @import 'config/reset';
 @import 'config/variable';
 @import 'config/mixin';
+@import 'config/theme';
 
 @import 'pages/header';
 @import 'pages/presentation';
@@ -13,6 +14,7 @@
 //Mobile
 @media screen and (min-width: 320px) {
   body {
+    transition: all ease .5s;
     a, button {
       @include flex(row, center, space-around, .5rem);
     }
@@ -21,201 +23,18 @@
       @include scrollbar(.2rem);
       overflow: hidden;
       height: 100%;
+      .portfolio-section {
+        height: 100%;
+        transition: height ease .5s;
+        &.hidden{
+          height: 0;
+          width: 0;
+          transform: scale(0);
+          overflow: hidden;
+        }
+      }
       .title-section {
         font-family: "Playwrite VN", serif;
-      }
-    }
-  }
-}
-
-//Laptop
-@media screen and (min-width: 1280px) {
-  main{
-  }
-}
-
-.portfolio-section{
-  height: 100%;
-  transition: height ease .5s;
-  &.hidden{
-    height: 0;
-    width: 0;
-    transform: scale(0);
-    overflow: hidden;
-  }
-}
-
-//Theme dark
-body.dark {
-  background: $background-dark;
-  color: $color-dark;
-
-  a, svg, button {
-    color: $color-dark;
-    fill: $color-dark;
-  }
-
-  a {
-    &:before, &:after {
-      background: $accent-dark;
-    }
-  }
-
-  //link header-container
-  #header-container {
-    border-color: $color-dark;
-    //link theme-button
-    #theme-button {
-      border-color: $accent-dark;
-
-      &:hover {
-        box-shadow: 2px 2px 2px $accent-dark;
-
-        .icon-content {
-          background: $accent-dark;
-        }
-      }
-
-      svg {
-        fill: $color-dark;
-
-        &#light-icon {
-          display: none;
-        }
-      }
-    }
-
-    //link navbar-container
-    #navbar-container {
-      //link close-button
-      #close-button {
-        fill: $color-dark;
-      }
-
-      //link navbar
-      #navbar {
-        background: $background-dark;
-
-        button {
-          &:before, &:after {
-            background: $accent-dark;
-          }
-
-          &.active {
-            &:after {
-              border-color: $color-dark;
-            }
-          }
-        }
-      }
-    }
-
-    //link hamburger-button
-    #hamburger-button {
-      border-color: $accent-dark;
-
-      svg {
-        fill: $accent-dark;
-      }
-    }
-  }
-
-  //link main
-  main {
-    &::-webkit-scrollbar {
-      background: $color-dark;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: $accent-dark;
-    }
-
-    //link diploma
-    #diploma {
-      //link timeline
-      #timeline {
-        &:before {
-          background: $accent-dark;
-        }
-
-        //link date
-        .date {
-          background: $background-dark;
-        }
-
-        //link card-content
-        .card-content {
-          //link icon-content
-          .icon-content {
-            svg {
-              fill: $accent-dark;
-            }
-          }
-
-          //link diploma-name
-          .diploma-name {
-            background: $accent-dark;
-          }
-        }
-      }
-    }
-
-    //link skills
-    .percent-bar {
-      &:before {
-        background: $accent-dark;
-      }
-    }
-
-    //link projects
-    #projects {
-      nav {
-        //link project-btn
-        .project-btn {
-          color: $color-dark;
-          border-color: $color-dark;
-
-          &:before {
-            background: $accent-dark;
-          }
-        }
-      }
-
-      .project-container {
-        &::-webkit-scrollbar {
-          background: $color-dark;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: $accent-dark;
-        }
-      }
-
-      .project-card {
-        background: $background-dark;
-      }
-
-      .description-content {
-        &::-webkit-scrollbar {
-          background: $color-dark;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: $accent-dark;
-        }
-      }
-    }
-  }
-
-  //link footer
-  footer {
-    border-color: $color-dark;
-
-    a {
-      padding: .5rem;
-
-      &:before, &:after {
-        background: $accent-dark;
       }
     }
   }

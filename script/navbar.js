@@ -16,24 +16,6 @@ function CloseNavbar() {
 hamburgerButton.addEventListener('click', OpenNavbar);
 closeButton.addEventListener('click', CloseNavbar);
 
-//link toggle theme
-const themeButton = document.getElementById('theme-button');
-const body = document.querySelector('body');
-
-function ToggleTheme() {
-  if (body.classList.contains('dark')) {
-    body.classList.toggle('dark');
-    body.classList.toggle('light');
-    themeButton.classList.toggle('active');
-  } else {
-    body.classList.toggle('dark');
-    body.classList.toggle('light');
-    themeButton.classList.toggle('active');
-  }
-}
-
-themeButton.addEventListener('click', ToggleTheme);
-
 const buttonNavbar = document.querySelectorAll('#navbar button');
 const portfolioSection = document.querySelectorAll('.portfolio-section');
 

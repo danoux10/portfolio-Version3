@@ -41,6 +41,7 @@
 
 @mixin linkNavHover() {
   position: relative;
+  padding: .5rem;
   &:before, &:after {
     content: '';
     transition: all ease .5s;

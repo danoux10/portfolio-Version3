@@ -47,6 +47,207 @@ body h2 {
   text-align: center;
 }
 
+body.dark {
+  background: #171717;
+  color: #e3e3e3;
+}
+body.dark a, body.dark svg, body.dark button {
+  color: #e3e3e3;
+  fill: #e3e3e3;
+}
+body.dark a:before, body.dark a:after {
+  background: #8d0fde;
+}
+body.dark #header-container {
+  border-color: #e3e3e3;
+}
+body.dark #header-container #theme-button {
+  border-color: #8d0fde;
+}
+body.dark #header-container #theme-button:hover {
+  box-shadow: 2px 2px 2px #8d0fde;
+}
+body.dark #header-container #theme-button:hover .icon-content {
+  background: #8d0fde;
+}
+body.dark #header-container #theme-button svg {
+  fill: #e3e3e3;
+}
+body.dark #header-container #theme-button svg#light-icon {
+  display: none;
+}
+body.dark #header-container #navbar-container #close-button {
+  fill: #e3e3e3;
+}
+body.dark #header-container #navbar-container #navbar {
+  background: #171717;
+}
+body.dark #header-container #navbar-container #navbar button:before, body.dark #header-container #navbar-container #navbar button:after {
+  background: #8d0fde;
+}
+body.dark #header-container #navbar-container #navbar button.active:after {
+  border-color: #e3e3e3;
+}
+body.dark #header-container #navbar-container #hamburger-button {
+  border-color: #8d0fde;
+}
+body.dark #header-container #navbar-container #hamburger-button svg {
+  fill: #8d0fde;
+}
+body.dark main::-webkit-scrollbar {
+  background: #e3e3e3;
+}
+body.dark main::-webkit-scrollbar-thumb {
+  background: #8d0fde;
+}
+body.dark main #diploma #timeline:before {
+  background: #8d0fde;
+}
+body.dark main #diploma #timeline .date {
+  background: #171717;
+}
+body.dark main #diploma #timeline .card-content .icon-content svg {
+  fill: #8d0fde;
+}
+body.dark main #diploma #timeline .card-content .diploma-name {
+  background: #8d0fde;
+}
+body.dark main .percent-bar:before {
+  background: #8d0fde;
+}
+body.dark main #projects nav .project-btn {
+  color: #e3e3e3;
+  border-color: #e3e3e3;
+}
+body.dark main #projects nav .project-btn:before {
+  background: #8d0fde;
+}
+body.dark main #projects .project-container::-webkit-scrollbar {
+  background: #e3e3e3;
+}
+body.dark main #projects .project-container::-webkit-scrollbar-thumb {
+  background: #8d0fde;
+}
+body.dark main #projects .project-card {
+  background: #171717;
+}
+body.dark main #projects .description-content::-webkit-scrollbar {
+  background: #e3e3e3;
+}
+body.dark main #projects .description-content::-webkit-scrollbar-thumb {
+  background: #8d0fde;
+}
+body.dark main footer {
+  border-color: #e3e3e3;
+}
+body.dark main footer a {
+  padding: 0.5rem;
+}
+body.dark main footer a:before, body.dark main footer a:after {
+  background: #8d0fde;
+}
+
+body.light {
+  background: #f5f5f5;
+  color: #333333;
+}
+body.light a, body.light svg, body.light button {
+  color: #333333;
+  fill: #333333;
+}
+body.light a:before, body.light a:after {
+  background: #c400ff;
+}
+body.light #header-container {
+  border-color: #333333;
+}
+body.light #header-container #theme-button {
+  border-color: #c400ff;
+  flex-direction: row-reverse;
+}
+body.light #header-container #theme-button:hover {
+  box-shadow: 2px 2px 2px #c400ff;
+}
+body.light #header-container #theme-button:hover .icon-content {
+  background: #c400ff;
+}
+body.light #header-container #theme-button svg {
+  fill: #333333;
+}
+body.light #header-container #theme-button svg#dark-icon {
+  display: none;
+}
+body.light #header-container #navbar-container #close-button {
+  fill: #333333;
+}
+body.light #header-container #navbar-container #navbar {
+  background: #f5f5f5;
+}
+body.light #header-container #navbar-container #navbar button:before, body.light #header-container #navbar-container #navbar button:after {
+  background: #c400ff;
+}
+body.light #header-container #navbar-container #navbar button.active:after {
+  border-color: #333333;
+}
+body.light #header-container #navbar-container #hamburger-button {
+  border-color: #c400ff;
+}
+body.light #header-container #navbar-container #hamburger-button svg {
+  fill: #c400ff;
+}
+body.light main::-webkit-scrollbar {
+  background: #333333;
+}
+body.light main::-webkit-scrollbar-thumb {
+  background: #c400ff;
+}
+body.light main #diploma #timeline:before {
+  background: #c400ff;
+}
+body.light main #diploma #timeline .date {
+  background: #f5f5f5;
+}
+body.light main #diploma #timeline .card-content .icon-content svg {
+  fill: #c400ff;
+}
+body.light main #diploma #timeline .card-content .diploma-name {
+  background: #c400ff;
+}
+body.light main .percent-bar:before {
+  background: #c400ff;
+}
+body.light main #projects nav .project-btn {
+  color: #333333;
+  border-color: #333333;
+}
+body.light main #projects nav .project-btn:before {
+  background: #c400ff;
+}
+body.light main #projects .project-container::-webkit-scrollbar {
+  background: #333333;
+}
+body.light main #projects .project-container::-webkit-scrollbar-thumb {
+  background: #c400ff;
+}
+body.light main #projects .project-card {
+  background: #f5f5f5;
+}
+body.light main #projects .description-content::-webkit-scrollbar {
+  background: #333333;
+}
+body.light main #projects .description-content::-webkit-scrollbar-thumb {
+  background: #c400ff;
+}
+body.light main footer {
+  border-color: #333333;
+}
+body.light main footer a {
+  padding: 0.5rem;
+}
+body.light main footer a:before, body.light main footer a:after {
+  background: #c400ff;
+}
+
 @media screen and (min-width: 320px) {
   #header-container {
     display: flex;
@@ -56,6 +257,7 @@ body h2 {
     gap: 0.5rem;
     padding: 0.2rem;
     position: relative;
+    z-index: 1;
   }
   #header-container #theme-button {
     display: flex;
@@ -186,6 +388,7 @@ body h2 {
   }
   #header-container #navbar-container #navbar button {
     position: relative;
+    padding: 0.5rem;
     position: relative;
     z-index: 0;
     padding: 0.5rem;
@@ -291,6 +494,7 @@ body h2 {
   }
   #presentation #presentation-info .information a {
     position: relative;
+    padding: 0.5rem;
     padding-bottom: 0.3rem;
   }
   #presentation #presentation-info .information a:before, #presentation #presentation-info .information a:after {
@@ -816,6 +1020,7 @@ body h2 {
     justify-content: space-around;
     gap: 0.5rem;
     position: relative;
+    padding: 0.5rem;
   }
   footer a:before, footer a:after {
     content: "";
@@ -862,6 +1067,7 @@ body h2 {
     justify-content: space-around;
     gap: 0.5rem;
     position: relative;
+    padding: 0.5rem;
   }
   footer a:before, footer a:after {
     content: "";
@@ -892,6 +1098,9 @@ body h2 {
   }
 }
 @media screen and (min-width: 320px) {
+  body {
+    transition: all ease 0.5s;
+  }
   body a, body button {
     display: flex;
     flex-direction: row;
@@ -912,119 +1121,19 @@ body h2 {
     width: 100%;
     border-radius: 50px;
   }
+  body main .portfolio-section {
+    height: 100%;
+    transition: height ease 0.5s;
+  }
+  body main .portfolio-section.hidden {
+    height: 0;
+    width: 0;
+    transform: scale(0);
+    overflow: hidden;
+  }
   body main .title-section {
     font-family: "Playwrite VN", serif;
   }
-}
-.portfolio-section {
-  height: 100%;
-  transition: height ease 0.5s;
-}
-.portfolio-section.hidden {
-  height: 0;
-  width: 0;
-  transform: scale(0);
-  overflow: hidden;
-}
-
-body.dark {
-  background: #171717;
-  color: #e3e3e3;
-}
-body.dark a, body.dark svg, body.dark button {
-  color: #e3e3e3;
-  fill: #e3e3e3;
-}
-body.dark a:before, body.dark a:after {
-  background: #8d0fde;
-}
-body.dark #header-container {
-  border-color: #e3e3e3;
-}
-body.dark #header-container #theme-button {
-  border-color: #8d0fde;
-}
-body.dark #header-container #theme-button:hover {
-  box-shadow: 2px 2px 2px #8d0fde;
-}
-body.dark #header-container #theme-button:hover .icon-content {
-  background: #8d0fde;
-}
-body.dark #header-container #theme-button svg {
-  fill: #e3e3e3;
-}
-body.dark #header-container #theme-button svg#light-icon {
-  display: none;
-}
-body.dark #header-container #navbar-container #close-button {
-  fill: #e3e3e3;
-}
-body.dark #header-container #navbar-container #navbar {
-  background: #171717;
-}
-body.dark #header-container #navbar-container #navbar button:before, body.dark #header-container #navbar-container #navbar button:after {
-  background: #8d0fde;
-}
-body.dark #header-container #navbar-container #navbar button.active:after {
-  border-color: #e3e3e3;
-}
-body.dark #header-container #hamburger-button {
-  border-color: #8d0fde;
-}
-body.dark #header-container #hamburger-button svg {
-  fill: #8d0fde;
-}
-body.dark main::-webkit-scrollbar {
-  background: #e3e3e3;
-}
-body.dark main::-webkit-scrollbar-thumb {
-  background: #8d0fde;
-}
-body.dark main #diploma #timeline:before {
-  background: #8d0fde;
-}
-body.dark main #diploma #timeline .date {
-  background: #171717;
-}
-body.dark main #diploma #timeline .card-content .icon-content svg {
-  fill: #8d0fde;
-}
-body.dark main #diploma #timeline .card-content .diploma-name {
-  background: #8d0fde;
-}
-body.dark main .percent-bar:before {
-  background: #8d0fde;
-}
-body.dark main #projects nav .project-btn {
-  color: #e3e3e3;
-  border-color: #e3e3e3;
-}
-body.dark main #projects nav .project-btn:before {
-  background: #8d0fde;
-}
-body.dark main #projects .project-container::-webkit-scrollbar {
-  background: #e3e3e3;
-}
-body.dark main #projects .project-container::-webkit-scrollbar-thumb {
-  background: #8d0fde;
-}
-body.dark main #projects .project-card {
-  background: #171717;
-}
-body.dark main #projects .description-content::-webkit-scrollbar {
-  background: #e3e3e3;
-}
-body.dark main #projects .description-content::-webkit-scrollbar-thumb {
-  background: #8d0fde;
-}
-body.dark footer {
-  border-color: #e3e3e3;
-}
-body.dark footer a {
-  padding: 0.5rem;
-}
-body.dark footer a:before, body.dark footer a:after {
-  background: #8d0fde;
 }
 
 /*# sourceMappingURL=index.css.map */

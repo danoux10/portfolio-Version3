@@ -8,11 +8,12 @@
 	<title>Dany Barbe - Portfolio</title>
 
 	<link rel="stylesheet" href="styles/index.css">
+	<script src="script/theme.js" defer></script>
 	<script src="script/navbar.js" defer></script>
 	<script src="script/projectNumber.js" defer></script>
 	<script src="script/project.js" defer></script>
 </head>
-<body class="dark">
+<body>
 <?php include_once 'pages/header.html'; ?>
 <main>
   <?php

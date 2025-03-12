@@ -1,0 +1,258 @@
+//Theme dark
+  body.dark{
+    background: $background-dark;
+    color: $color-dark;
+    a,svg,button{
+      color: $color-dark;
+      fill: $color-dark;
+    }
+    a{
+      &:before,&:after{
+        background: $accent-dark;
+      }
+    }
+    #header-container{
+      border-color: $color-dark;
+      #theme-button{
+        border-color: $accent-dark;
+        &:hover{
+          box-shadow: 2px 2px 2px $accent-dark;
+          .icon-content{
+            background: $accent-dark;
+          }
+        }
+        svg{
+          fill:$color-dark;
+          &#light-icon{
+            display: none;
+          }
+        }
+      }
+      #navbar-container{
+        #close-button{
+          fill:$color-dark;
+        }
+        #navbar{
+          background: $background-dark;
+          button{
+            &:before,&:after{
+              background: $accent-dark;
+            }
+            &.active{
+              &:after{
+                border-color: $color-dark;
+              }
+            }
+          }
+        }
+        #hamburger-button{
+          border-color: $accent-dark;
+          svg{
+            fill : $accent-dark;
+          }
+        }
+      }
+    }
+    main{
+      &::-webkit-scrollbar {
+        background: $color-dark;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $accent-dark;
+      }
+      #diploma{
+        #timeline{
+          &:before{
+            background: $accent-dark;
+          }
+          .date{
+            background: $background-dark;
+          }
+          .card-content{
+            .icon-content{
+              svg{
+                fill: $accent-dark;
+              }
+            }
+            .diploma-name{
+              background: $accent-dark;
+            }
+          }
+        }
+      }
+      .percent-bar{
+        &:before{
+          background: $accent-dark;
+        }
+      }
+      #projects{
+        nav{
+          .project-btn{
+            color: $color-dark;
+            border-color: $color-dark;
+            &:before{
+              background: $accent-dark;
+            }
+          }
+        }
+        .project-container {
+          &::-webkit-scrollbar {
+            background: $color-dark;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: $accent-dark;
+          }
+        }
+        .project-card {
+          background: $background-dark;
+        }
+        .description-content {
+          &::-webkit-scrollbar {
+            background: $color-dark;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: $accent-dark;
+          }
+        }
+      }
+      footer {
+        border-color: $color-dark;
+        a {
+          padding: .5rem;
+          &:before, &:after {
+            background: $accent-dark;
+          }
+        }
+      }
+    }
+  }
+
+//Theme light
+body.light{
+    background: $background-light;
+    color: $color-light;
+    a,svg,button{
+      color: $color-light;
+      fill: $color-light;
+    }
+    a{
+      &:before,&:after{
+        background: $accent-light;
+      }
+    }
+    #header-container{
+      border-color: $color-light;
+      #theme-button{
+        border-color: $accent-light;
+        flex-direction: row-reverse;
+        &:hover{
+          box-shadow: 2px 2px 2px $accent-light;
+          .icon-content{
+            background: $accent-light;
+          }
+        }
+        svg{
+          fill:$color-light;
+          &#dark-icon{
+            display: none;
+          }
+        }
+      }
+      #navbar-container{
+        #close-button{
+          fill:$color-light;
+        }
+        #navbar{
+          background: $background-light;
+          button{
+            &:before,&:after{
+              background: $accent-light;
+            }
+            &.active{
+              &:after{
+                border-color: $color-light;
+              }
+            }
+          }
+        }
+        #hamburger-button{
+          border-color: $accent-light;
+          svg{
+            fill : $accent-light;
+          }
+        }
+      }
+    }
+    main{
+      &::-webkit-scrollbar {
+        background: $color-light;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $accent-light;
+      }
+      #diploma{
+        #timeline{
+          &:before{
+            background: $accent-light;
+          }
+          .date{
+            background: $background-light;
+          }
+          .card-content{
+            .icon-content{
+              svg{
+                fill: $accent-light;
+              }
+            }
+            .diploma-name{
+              background: $accent-light;
+            }
+          }
+        }
+      }
+      .percent-bar{
+        &:before{
+          background: $accent-light;
+        }
+      }
+      #projects{
+        nav{
+          .project-btn{
+            color: $color-light;
+            border-color: $color-light;
+            &:before{
+              background: $accent-light;
+            }
+          }
+        }
+        .project-container {
+          &::-webkit-scrollbar {
+            background: $color-light;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: $accent-light;
+          }
+        }
+        .project-card {
+          background: $background-light;
+        }
+        .description-content {
+          &::-webkit-scrollbar {
+            background: $color-light;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: $accent-light;
+          }
+        }
+      }
+      footer {
+        border-color: $color-light;
+        a {
+          padding: .5rem;
+          &:before, &:after {
+            background: $accent-light;
+          }
+        }
+      }
+    }
+  }
