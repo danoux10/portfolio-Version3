@@ -1,8 +1,10 @@
 @import 'config/reset';
 @import 'config/variable';
 @import 'config/mixin';
+@import 'config/keyframes';
 @import 'config/theme';
 
+@import 'pages/loader';
 @import 'pages/header';
 @import 'pages/presentation';
 @import 'pages/diplome';
@@ -15,27 +17,51 @@
 @media screen and (min-width: 320px) {
   body {
     transition: all ease .5s;
+
     a, button {
       @include flex(row, center, space-around, .5rem);
     }
+
     main {
       @incldue flex(column, none, none, none);
       @include scrollbar(.2rem);
       overflow: hidden;
       height: 100%;
+
       .portfolio-section {
         height: 100%;
         transition: height ease .5s;
-        &.hidden{
+
+        &.hidden {
           height: 0;
           width: 0;
           transform: scale(0);
           overflow: hidden;
         }
       }
+
       .title-section {
         font-family: "Playwrite VN", serif;
       }
     }
+  }
+}
+
+#loader-content{
+  transition: height ease .5s;
+  &.hidden{
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+#header-container,main,footer{
+  transition: height ease .5s;
+  &.hidden{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
   }
 }

@@ -9,11 +9,14 @@
 
 	<link rel="stylesheet" href="styles/index.css">
 	<script src="script/theme.js" defer></script>
+	<script src="script/loader.js" defer></script>
 	<script src="script/navbar.js" defer></script>
 	<script src="script/projectNumber.js" defer></script>
 	<script src="script/project.js" defer></script>
 </head>
 <body>
+<?php include_once 'pages/loader.html';?>
+
 <?php include_once 'pages/header.html'; ?>
 <main>
   <?php
