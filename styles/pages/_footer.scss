@@ -1,0 +1,39 @@
+//Mobile
+@media screen and (min-width: 320px){
+  footer {
+    @include flex(row, center, space-around, none);
+    flex-wrap: wrap;
+    border-top: 2px solid;
+    padding: .5rem 0;
+
+    a {
+      @include flex(row, center, space-around, .5rem);
+      @include linkNavHover;
+
+      .icon-content {
+        @include square(2rem);
+      }
+    }
+  }
+}
+
+//Laptop
+@media screen and (min-width: 1280px){
+  footer {
+    @include flex(row, center, space-around, none);
+    flex-wrap: wrap;
+    border-top: 2px solid;
+    padding: .5rem 0;
+
+    a {
+      @include flex(row, center, space-around, .5rem);
+      @include linkNavHover;
+
+      .icon-content {
+        @include square(2rem);
+      }
+    }
+  }
+}
+
+//Theme

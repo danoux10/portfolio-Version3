@@ -1,0 +1,157 @@
+//Mobile
+@media screen and (min-width: 320px){
+  #header-container {
+    @include flex(row, center, flex-end, .5rem);
+    padding: .2rem;
+    position: relative;
+    z-index: 1;
+    #theme-button {
+      @include flex(row, center, center, none);
+      @include square(2rem);
+      order: 1;
+      padding: .2rem;
+
+      .icon-content {
+        @include square(90%);
+      }
+    }
+
+    #navbar-container {
+      @include absolute(0, none, none, 0);
+      width: 80%;
+      height: 100vh;
+      border-right: 2px solid;
+      transition: width ease .5s;
+      overflow: hidden;
+
+      &.close {
+        width: 0;
+        border: none;
+      }
+
+      #close-button {
+        @include square(2rem);
+        @include absolute(.2rem, .5rem, none, none);
+      }
+
+      #navbar {
+        @include flex(column, center, space-around, none);
+        height: 100%;
+
+        button {
+          padding: .5rem;
+
+          &:before {
+            content: '';
+            transition: all ease .5s;
+            position: absolute;
+            bottom: .1rem;
+            width: 100%;
+            height: .2rem;
+          }
+
+          .icon-content {
+            @include square(2rem);
+          }
+
+          .link-value {
+            font-weight: bold;
+
+            &:first-letter {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+
+    #hamburger-button {
+      @include flex(row, center, center, none);
+      width: 4rem;
+      border: 2px solid;
+      border-radius: .5rem;
+
+      .icon-content {
+        @include square(2rem);
+      }
+    }
+  }
+}
+
+//Laptop
+@media screen and (min-width: 1280px){
+  #header-container {
+    @include flex(row, center, space-around, none);
+    padding: .5rem;
+    #theme-button {
+      @include flex(row, center, flex-start, none);
+      order: 2;
+      width: 6rem;
+      height: auto;
+      padding: .2rem;
+      cursor: pointer;
+      transition: all ease .5s;
+
+      &.active {
+        @include flex(row-reverse, none, none, none);
+      }
+
+      .icon-content {
+        @include square(2rem);
+        border-radius: 50px;
+        padding: .2rem;
+        transition: all ease .5s;
+      }
+    }
+
+    #navbar-container {
+      position: relative;
+      width: 80%;
+      height: auto;
+      border: none;
+
+      &.close {
+        width: 100%;
+      }
+
+      #close-button {
+        display: none;
+      }
+
+      #navbar {
+        @include flex(row, center, space-around, none);
+        background: none;
+
+        button {
+          @include linkNavHover;
+          position: relative;
+          z-index: 0;
+          padding: .5rem;
+          border-radius: 5px;
+
+          &.active {
+            @include linkNavActive;
+          }
+
+          .icon-content {
+            @include square(2rem);
+          }
+
+          .link-value {
+            font-weight: bold;
+
+            &:first-letter {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+
+    #hamburger-button {
+      display: none;
+    }
+  }
+}
+
+//Theme

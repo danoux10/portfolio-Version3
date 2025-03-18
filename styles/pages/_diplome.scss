@@ -1,0 +1,64 @@
+//Mobile
+@media screen and (min-width: 320px) {
+  #diploma {
+    @include flex(column, center, none, none);
+
+    #timeline {
+      @include flex(column, none, space-around, none);
+      position: relative;
+      height: 100%;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: .5rem;
+        height: 80%;
+        left: 1.6rem;
+        transform: translate(-50%);
+        border: 4px solid;
+        z-index: -1;
+      }
+
+      .diploma-card {
+        @include flex(row, center, none, none);
+
+        .date {
+          text-align: center;
+          border: 2px solid;
+          border-radius: 10px;
+          padding: .5rem;
+          margin-right: 1rem;
+        }
+
+        .card-content {
+          @include flex(row, center, none, none);
+          position: relative;
+          padding: .2rem;
+
+          .icon-content {
+            @include square(2rem);
+            position: absolute;
+            left: -1rem;
+            z-index: -1;
+          }
+
+          .diploma-name {
+            padding: .5rem;
+            border-radius: 10px;
+
+            p {
+              text-align: center;
+            }
+
+            .diploma-title {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//Theme
