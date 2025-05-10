@@ -1,0 +1,45 @@
+//Theme dark
+@media screen and (prefers-color-scheme: dark){
+  body{
+    background: $background-dark;
+    color: $color-dark;
+    //link navbar
+    #navbar-container{
+      //link hamburger button
+      #hamburger-button{
+        .hamburger-button{
+
+        }
+      }
+      //link navbar
+      #navbar{
+        a{
+          .icon-content{
+            svg{
+
+            }
+          }
+          .link-value{
+
+          }
+        }
+      }
+      //link theme-button
+      #theme-button{
+        .icon-content{
+          svg{
+
+          }
+        }
+      }
+    }
+  }
+}
+
+//Theme light
+@media screen and (prefers-color-scheme: light){
+  body{
+    background: $background-light;
+    color: $color-light;
+  }
+}

@@ -1,0 +1,956 @@
+@import 'config/reset';
+@import 'config/variable';
+@import 'config/mixin';
+
+body {
+  transition: all ease .5s;
+  position: relative;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    @include flex(row, center, space-around, .5rem);
+  }
+
+  //link header-container
+  #header-container {
+    border-bottom: 2px solid;
+    //link theme-button
+    #theme-button {
+      border: 2px solid;
+      border-radius: 50px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+//Mobile
+@media screen and (min-width: 320px) {
+  body {
+    //link header-container
+    #header-container {
+      @include flex(row, center, flex-end, .5rem);
+      padding: .2rem;
+      position: relative;
+      //link theme-button
+      #theme-button {
+        @include flex(row, center, center, none);
+        @include square(2rem);
+        order: 1;
+        padding: .2rem;
+
+        .icon-content {
+          @include square(90%);
+        }
+      }
+
+      //link navbar-container
+      #navbar-container {
+        @include absolute(0, none, none, 0);
+        width: 80%;
+        height: 100vh;
+        border-right: 2px solid;
+        transition: width ease .5s;
+        overflow: hidden;
+
+        &.close {
+          width: 0;
+          border: none;
+        }
+
+        //link close-button
+        #close-button {
+          @include square(2rem);
+          @include absolute(.2rem, .5rem, none, none);
+        }
+
+        //link navbar
+        #navbar {
+          @include flex(column, center, space-around, none);
+          height: 100%;
+
+          a {
+            padding: .5rem;
+
+            &:before {
+              content: '';
+              transition: all ease .5s;
+              position: absolute;
+              bottom: .1rem;
+              width: 100%;
+              height: .2rem;
+            }
+
+            .icon-content {
+              @include square(2rem);
+            }
+
+            .link-value {
+              font-weight: bold;
+
+              &:first-letter {
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+
+      //link hamburger-button
+      #hamburger-button {
+        @include flex(row, center, center, none);
+        width: 4rem;
+        border: 2px solid;
+        border-radius: .5rem;
+
+        .icon-content {
+          @include square(2rem);
+        }
+      }
+    }
+
+    //link main
+    main {
+      @incldue flex(column, none, none, none);
+      @include scrollbar(.2rem);
+      overflow: hidden;
+
+      .title-section {
+        font-family: "Playwrite VN", serif;
+      }
+
+      //link presentation
+      #presentation {
+        @include flex(column, center, none, .5rem);
+        width: 100%;
+        //link presentation-title
+        #presentation-title {
+          @include flex(row, center, space-around, none);
+          width: 100%;
+          margin-top: .2rem;
+
+          img {
+            height: 6rem;
+            border-radius: 10px;
+          }
+        }
+
+        //link presentation-text
+        #presentation-text {
+          @include flex(column, center, space-around, .5rem);
+          text-align: center;
+          padding: 0 .5rem;
+
+          p {
+            &:first-letter {
+              text-transform: uppercase;
+            }
+          }
+        }
+
+        //link presentation-info
+        #presentation-info {
+          @include flex(column, none, space-around, none);
+          height: 50%;
+          //link information
+          .information {
+            @include flex(row, center, space-around, .5rem);
+            flex-wrap: wrap;
+
+            a {
+              @include linkNavHover;
+              padding-bottom: .3rem;
+            }
+
+            .info-content {
+              @include flex(row, center, none, .5rem);
+
+              .label {
+                &:after {
+                  content: ':';
+                  margin-left: .2rem;
+                }
+              }
+
+              .icon-content {
+                @include square(2rem);
+              }
+            }
+
+            //link lien
+            &#lien {
+              margin-top: .6rem;
+            }
+          }
+        }
+      }
+
+      //link diploma
+      #diploma {
+        @include flex(column, center, none, none);
+        height: 100%;
+        //link timeline
+        #timeline {
+          @include flex(column, none, space-around, none);
+          position: relative;
+          height: 100%;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: .5rem;
+            height: 80%;
+            left: 1.6rem;
+            transform: translate(-50%);
+            border: 4px solid;
+            z-index: -1;
+          }
+
+          //link diploma-card
+          .diploma-card {
+            @include flex(row, center, none, none);
+            //link date
+            .date {
+              text-align: center;
+              border: 2px solid;
+              border-radius: 10px;
+              padding: .5rem;
+              margin-right: 1rem;
+            }
+
+            //link card-content
+            .card-content {
+              @include flex(row, center, none, none);
+              position: relative;
+              padding: .2rem;
+
+              .icon-content {
+                @include square(2rem);
+                position: absolute;
+                left: -1rem;
+                z-index: -1;
+              }
+
+              //link diploma-name
+              .diploma-name {
+                padding: .5rem;
+                border-radius: 10px;
+
+                p {
+                  text-align: center;
+                }
+
+                //link diploma-title
+                .diploma-title {
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //link skills
+      #skills {
+        @include flex(column, center, none, none);
+        height: 100%;
+        //link language-container
+        #language-container {
+          @include flex(row, center, none, none);
+          flex-wrap: wrap;
+          width: 100%;
+          height: 100%;
+          //link techno
+          .techno {
+            @include flex(column, center, none, none);
+            //link cards-container
+            .cards-container {
+              @include flex(row, none, center, .5rem);
+              flex-wrap: wrap;
+              width: 100%;
+              //link skill-card
+              .skill-card {
+                @include flex(column, center, space-around, none);
+                border: 2px solid;
+                border-radius: 5px;
+                width: 8rem;
+                height: 9rem;
+                padding: .5rem;
+                //link skill-title
+                .skill-title {
+                  text-transform: uppercase;
+                  font-weight: bold;
+                }
+
+                //link skill-icon
+                .skill-icon {
+                  //width: 2rem;
+                  svg {
+                    width: 2.5rem;
+                    height: 100%;
+                  }
+
+                  &.small-icon {
+                    svg {
+                      width: 3.5rem;
+                    }
+                  }
+                }
+
+                //link percent
+                .percent {
+                  @include flex(column, center, center, .5rem);
+                  width: 100%;
+                  //link percent-value
+                  .percent-value {
+                    &:before {
+                      content: '~ ';
+                    }
+
+                    &:after {
+                      content: '%';
+                    }
+                  }
+
+                  //link percent-bar
+                  .percent-bar {
+                    display: block;
+                    width: 100%;
+                    height: .6rem;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 5px;
+                    border: 2px solid;
+
+                    &:before {
+                      transition: width ease .5s;
+                      content: '';
+                      position: absolute;
+                      height: 100%;
+                      width: var(--percent);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //link projects
+      #projects {
+        @include flex(column, none, none, none);
+        //link nav
+        nav {
+          @include flex(row, none, none, .2rem);
+          margin-top: .5rem;
+          //link project-btn
+          .project-btn {
+            @include flex(column, center, center, .2rem);
+            position: relative;
+            width: 90%;
+            padding: .2rem 0;
+            border: 2px solid;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            font-weight: bold;
+
+            p {
+              &:first-letter {
+                text-transform: uppercase;
+              }
+            }
+
+            //link project-number
+            .project-number {
+              &:before {
+                content: '[';
+                margin-right: .1rem;
+              }
+
+              &:after {
+                content: ']';
+                margin-left: .1rem;
+              }
+            }
+          }
+        }
+
+        //link projects-content
+        .projects-content {
+          display: flex;
+          flex-direction: column;
+          //link project-container
+          .project-container {
+            @include flex(column, none, none, .5rem);
+            @include scrollbar(.2rem);
+            height: 40rem;
+            width: 100%;
+            overflow: scroll;
+            transition: height ease .5s;
+            &.hidden{
+              width: 0;
+              height: 0;
+            }
+            //link project-card
+            .project-card {
+              @include flex(column, none, none, none);
+              border: 1px solid;
+              border-left: none;
+              border-right: none;
+              padding: .5rem 0;
+              position: sticky;
+              top: 0;
+              //link info-container
+              .info-container {
+                @include flex(column-reverse, none, none, none);
+                //link image-content
+                .image-content {
+                  width: 100%;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                //link title-and-info
+                .title-and-info {
+                  @include flex(column, none, none, none);
+
+                  .title-content {
+                    @include flex(row, center, center, .5rem);
+                  }
+
+                  .tech-and-link {
+                    @include flex(row, none, none, .5rem);
+
+                    ul, .link-content {
+                      width: 50%;
+                    }
+
+                    ul {
+                      display: flex;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                      gap: .5rem;
+                      padding-left: .5rem;
+
+                      li {
+                        display: flex;
+                        align-items: center;
+
+                        &:before {
+                          content: '•';
+                          margin-right: .2rem;
+                        }
+                      }
+                    }
+
+                    .link-content {
+                      @include flex(column, center, space-around, .5rem);
+
+                      a {
+                        @include flex(row-reverse, none, none, none);
+                        position: relative;
+                        padding-bottom: .2rem;
+
+                        &:before {
+                          content: '';
+                          position: absolute;
+                          width: 100%;
+                          height: .1rem;
+                          bottom: 0;
+                        }
+
+                        .icon-content {
+                          width: 1.2rem;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .description-content {
+                @include scrollbar(.2rem);
+                overflow: auto;
+                max-height: 17rem;
+                padding: 0 .1rem;
+
+                .description {
+                  text-align: justify;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //link footer
+  footer {
+    @include flex(row, center, space-around, none);
+    flex-wrap: wrap;
+    border-top: 2px solid;
+    padding: .5rem 0;
+
+    a {
+      @include flex(row, center, space-around, .5rem);
+      @include linkNavHover;
+
+      .icon-content {
+        @include square(2rem);
+      }
+    }
+  }
+}
+
+//Laptop
+@media screen and (min-width: 1280px) {
+  body {
+    //link header-container
+    #header-container {
+      @include flex(row, center, space-around, none);
+      padding: .5rem;
+      //link theme-button
+      #theme-button {
+        @include flex(row, center, flex-start, none);
+        order: 2;
+        width: 6rem;
+        height: auto;
+        padding: .2rem;
+        cursor: pointer;
+        transition: all ease .5s;
+
+        &.active {
+          @include flex(row-reverse, none, none, none);
+        }
+
+        .icon-content {
+          @include square(2rem);
+          border-radius: 50px;
+          padding: .2rem;
+          transition: all ease .5s;
+        }
+      }
+
+      //link navbar-container
+      #navbar-container {
+        position: relative;
+        width: 80%;
+        height: auto;
+        border: none;
+
+        &.close {
+          width: 100%;
+        }
+
+        //link close-button
+        #close-button {
+          display: none;
+        }
+
+        //link navbar
+        #navbar {
+          @include flex(row, center, space-around, none);
+          background: none;
+
+          a {
+            @include linkNavHover;
+            position: relative;
+            z-index: 0;
+            padding: .5rem;
+            border-radius: 5px;
+
+            &.active {
+              @include linkNavActive;
+            }
+
+            .icon-content {
+              @include square(2rem);
+            }
+
+            .link-value {
+              font-weight: bold;
+
+              &:first-letter {
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+
+      //link hamburger-button
+      #hamburger-button {
+        display: none;
+      }
+    }
+
+    main {
+      //link presentation
+      #presentation {
+        //link presentation-title
+        p, a {
+          font-size: 1.5rem;
+        }
+
+        #presentation-title {
+          width: 40%;
+        }
+
+        //link presentation-info
+        #presentation-info {
+          @include flex(row, none, none, none);
+          width: 50%;
+          //link information
+          .information {
+            @include flex(column, center, space-around, none);
+
+            a {
+              padding: .5rem;
+            }
+
+            //link lien
+            &#lien {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      //link skills
+      #skills {
+        //link languages-container
+        #language-container {
+          //link techno
+          .techno {
+            width: 50%;
+            height: 100%;
+            //link title techno
+            h3 {
+              font-size: 2rem;
+            }
+
+            //link cards-container
+            .cards-container {
+              @include flex(row, none, space-around, none);
+              flex-wrap: wrap;
+              width: 70%;
+              height: 100%;
+            }
+
+            //link skill-card
+            .skill-card {
+              width: 5rem;
+            }
+          }
+        }
+      }
+
+      //link project
+      #projects {
+        //link nav
+        nav {
+          //link project-btn
+          .project-btn {
+            cursor: pointer;
+
+            &:before {
+              content: '';
+              height: 0;
+              transition: height ease .5s;
+              z-index: -1;
+            }
+
+            &:hover {
+              &:before {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            &.active {
+              &:before {
+                content: '';
+                position: absolute;
+                transition: height ease .5s;
+                top: 0;
+                width: 100%;
+                height: 100%;
+              }
+
+              &:hover {
+                &:before {
+                  height: 0;
+                }
+              }
+            }
+
+          }
+        }
+
+        //link projects-content
+        .projects-content {
+          //link project-container
+          .project-container {
+            height: 50rem;
+            //link project-card
+            .project-card {
+              //link info-container
+              .info-container {
+                @include flex(row, none, space-around, none);
+                //link image-content
+                .image-content {
+                  width: 25%;
+                }
+
+                //link title-and-info
+                .title-and-info {
+                  width: 25%;
+
+                  .title-content {
+                    @include flex(column, none, none, none);
+                  }
+
+                  .tech-and-link {
+                    ul {
+                      @include flex(column, none, none, none);
+
+                    }
+
+                    .link-content {
+                      a {
+                        &:before {
+                          transition: all ease .5s;
+                        }
+
+                        &:hover {
+                          &:before {
+                            z-index: -1;
+                            height: 100%;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .description-content {
+                @include flex(column, center, none, none);
+                margin-top: .5rem;
+
+                .description {
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  //link footer
+  footer {
+    @include flex(row, center, space-around, none);
+    flex-wrap: wrap;
+    border-top: 2px solid;
+    padding: .5rem 0;
+
+    a {
+      @include flex(row, center, space-around, .5rem);
+      @include linkNavHover;
+
+      .icon-content {
+        @include square(2rem);
+      }
+    }
+  }
+}
+
+//Theme dark
+body.dark {
+  background: $background-dark;
+  color: $color-dark;
+
+  a, svg {
+    color: $color-dark;
+    fill: $color-dark;
+  }
+
+  a {
+    &:before, &:after {
+      background: $accent-dark;
+    }
+  }
+
+  //link header-container
+  #header-container {
+    border-color: $color-dark;
+    //link theme-button
+    #theme-button {
+      border-color: $accent-dark;
+
+      &:hover {
+        box-shadow: 2px 2px 2px $accent-dark;
+
+        .icon-content {
+          background: $accent-dark;
+        }
+      }
+
+      svg {
+        fill: $color-dark;
+
+        &#light-icon {
+          display: none;
+        }
+      }
+    }
+
+    //link navbar-container
+    #navbar-container {
+      //link close-button
+      #close-button {
+        fill: $color-dark;
+      }
+
+      //link navbar
+      #navbar {
+        background: $background-dark;
+
+        a {
+          &:before, &:after {
+            background: $accent-dark;
+          }
+
+          &.active {
+            &:after {
+              border-color: $color-dark;
+            }
+          }
+        }
+      }
+    }
+
+    //link hamburger-button
+    #hamburger-button {
+      border-color: $accent-dark;
+
+      svg {
+        fill: $accent-dark;
+      }
+    }
+  }
+
+  //link main
+  main {
+    &::-webkit-scrollbar {
+      background: $color-dark;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $accent-dark;
+    }
+
+    //link diploma
+    #diploma {
+      //link timeline
+      #timeline {
+        &:before {
+          background: $accent-dark;
+        }
+
+        //link date
+        .date {
+          background: $background-dark;
+        }
+
+        //link card-content
+        .card-content {
+          //link icon-content
+          .icon-content {
+            svg {
+              fill: $accent-dark;
+            }
+          }
+
+          //link diploma-name
+          .diploma-name {
+            background: $accent-dark;
+          }
+        }
+      }
+    }
+
+    //link skills
+    .percent-bar {
+      &:before {
+        background: $accent-dark;
+      }
+    }
+
+    //link projects
+    #projects {
+      nav {
+        //link project-btn
+        .project-btn {
+          color: $color-dark;
+          border-color: $color-dark;
+
+          &:before {
+            background: $accent-dark;
+          }
+        }
+      }
+
+      .project-container {
+        &::-webkit-scrollbar {
+          background: $color-dark;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $accent-dark;
+        }
+      }
+
+      .project-card {
+        background: $background-dark;
+      }
+
+      .description-content {
+        &::-webkit-scrollbar {
+          background: $color-dark;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $accent-dark;
+        }
+      }
+    }
+  }
+
+  //link footer
+  footer {
+    border-color: $color-dark;
+
+    a {
+      padding: .5rem;
+
+      &:before, &:after {
+        background: $accent-dark;
+      }
+    }
+  }
+}
